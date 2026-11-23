@@ -1,7 +1,6 @@
 import React from "react";
-import { interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
+import { Img, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { FONTE } from "./fonte";
-import { Glifo } from "./Glifos";
 
 export const Balao: React.FC<{ pergunta: string; y: number }> = ({ pergunta, y }) => {
   const f = useCurrentFrame();
@@ -68,14 +67,14 @@ export const CardSeguir: React.FC<{ y: number }> = ({ y }) => {
           width: 210,
           height: 210,
           borderRadius: 105,
-          background: "#0c0c0c",
-          border: "6px solid #e9e9e9",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
+          background: "#000",
+          border: "4px solid #3a3a3a",
+          overflow: "hidden",
+          boxShadow: "0 0 40px rgba(255,255,255,0.12)",
         }}
       >
-        <Glifo nome="interrogacao" cor="#e9e9e9" contraste="#e9e9e9" tamanho={150} />
+        {/* logo do @quebra.padrao (estilo/marca/logo.png) */}
+        <Img src={staticFile("_marca/logo.png")} style={{ width: "100%", height: "100%", objectFit: "cover", transform: "scale(1.35)" }} />
       </div>
       <div style={{ color: "#fff", fontSize: 56, fontWeight: 800, marginTop: 34 }}>@quebra.padrao</div>
       <div style={{ color: "#a0a0a0", fontSize: 30, fontWeight: 500, marginTop: 10 }}>Te explicando coisas em 1 minuto</div>

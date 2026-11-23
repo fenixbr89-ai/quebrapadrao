@@ -27,14 +27,15 @@ Wizebot e Cervello (`referencias/movimento-*`) são só referência de **técnic
 - **Foto recortada sem moldura** para o momento de maior impacto (Titanic: jornaleiro com "TITANIC DISASTER", quadro 26).
 - **Grade de ícones** para proporção (botes: pessoas, metade em vermelho, quadro 23).
 - **Repetição de alertas**: vários ícones vermelhos em volta de uma foto = "muitos avisos".
+- **Logo do perfil**: `estilo/marca/logo.png` (interrogação brilhante), usada no avatar do card final (`videos/_marca/logo.png`).
 - **Final fixo** (ver `titanic/quadro-29.jpg` a `31`; o botão "Seguir" vira "Seguindo"): balão "você: <pergunta>?" + card com avatar "?", **@quebra.padrao**, "Te explicando coisas em 1 minuto" e botão **Seguir**. Legenda: "E segue o @quebra.padrao."
 - Penúltima cena: "recapitulação" — foto central com os ícones das causas em volta.
 
 ## Movimento (técnicas a aplicar, vindas de Wizebot/Cervello)
 **Implementado em `src/componentes/Camera.tsx` (aplicado automaticamente a toda cena — dono pediu em 2026-11-23):**
-- Transições de 10 quadros centradas na troca de frase, alternando: zoom atravessando (sai crescendo e borrando, a próxima nasce do fundo), chicote lateral e vertical com rastro de movimento, giro 3D.
+- Transições de 18 quadros (suaves, uma cena dissolve na outra) centradas na troca de frase, alternando: zoom atravessando (sai crescendo e borrando, a próxima nasce do fundo), chicote lateral e vertical com rastro de movimento, giro 3D.
 - Câmera 3D contínua em cada cena, variando: aproximação com inclinação, órbita lateral (rotateY), subida com inclinação, leve giro (dutch).
-- A cada 3 cenas, um ícone grande e desfocado passa na frente da câmera (profundidade).
+- **Não usar** ícone grande desfocado passando na frente (dono achou sem qualidade, 2026-11-23). Nada pode sair da tela: rótulos a ≥ 80 px da borda.
 - Pergunta e card final ficam com câmera suave.
 
 - Câmera com leve deriva/zoom contínuo em toda cena; nada fica parado.

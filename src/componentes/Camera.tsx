@@ -3,7 +3,7 @@ import { AbsoluteFill, Easing, interpolate, useCurrentFrame } from "remotion";
 import { Icone3D } from "./Icone3D";
 
 /** Quadros de transição (sobreposição entre uma cena e a próxima). */
-export const TRANSICAO = 10;
+export const TRANSICAO = 18;
 
 export type Transicao = "zoom" | "chicoteX" | "chicoteY" | "giro";
 const SEQUENCIA: Transicao[] = ["zoom", "chicoteX", "zoom", "giro", "chicoteY"];
@@ -37,15 +37,15 @@ function estilo(tipo: Transicao, p: number, sentido: 1 | -1): React.CSSPropertie
   if (p <= 0) return {};
   switch (tipo) {
     case "zoom": {
-      const escala = sentido === 1 ? 1 + p * 1.8 : 1 - p * 0.45;
-      return { transform: `scale(${escala})`, filter: `blur(${p * 26}px)`, opacity: 1 - p };
+      const escala = sentido === 1 ? 1 + p * 0.9 : 1 - p * 0.3;
+      return { transform: `scale(${escala})`, filter: `blur(${p * 16}px)`, opacity: 1 - p };
     }
     case "chicoteX":
-      return { transform: `translateX(${-sentido * p * 1250}px)`, filter: borrao("x", p * 1.6), opacity: 1 - p * 0.3 };
+      return { transform: `translateX(${-sentido * p * 700}px)`, filter: borrao("x", p * 1.2), opacity: 1 - p };
     case "chicoteY":
-      return { transform: `translateY(${-sentido * p * 1900}px)`, filter: borrao("y", p * 1.6), opacity: 1 - p * 0.3 };
+      return { transform: `translateY(${-sentido * p * 900}px)`, filter: borrao("y", p * 1.2), opacity: 1 - p };
     case "giro":
-      return { transform: `rotateY(${sentido * p * 75}deg) scale(${1 - p * 0.2})`, filter: `blur(${p * 14}px)`, opacity: 1 - p };
+      return { transform: `rotateY(${sentido * p * 45}deg) scale(${1 - p * 0.12})`, filter: `blur(${p * 10}px)`, opacity: 1 - p };
   }
 }
 
@@ -53,13 +53,13 @@ function estilo(tipo: Transicao, p: number, sentido: 1 | -1): React.CSSPropertie
 function movimento(indice: number, q: number): string {
   switch (indice % 4) {
     case 0:
-      return `scale(${1 + q * 0.14}) rotateX(${6 - q * 6}deg)`;
+      return `scale(${1 + q * 0.1}) rotateX(${5 - q * 5}deg)`;
     case 1:
-      return `rotateY(${16 - q * 24}deg) scale(${1.04 + q * 0.06})`;
+      return `rotateY(${8 - q * 14}deg) scale(${1.0 + q * 0.06})`;
     case 2:
-      return `translateY(${50 - q * 100}px) rotateX(${-8 + q * 12}deg) scale(1.06)`;
+      return `translateY(${36 - q * 72}px) rotateX(${-6 + q * 10}deg) scale(1.02)`;
     default:
-      return `rotateZ(${-3 + q * 6}deg) scale(${1.12 - q * 0.1})`;
+      return `rotateZ(${-2 + q * 4}deg) scale(${1.08 - q * 0.08})`;
   }
 }
 
@@ -88,8 +88,9 @@ export const Camera: React.FC<{
 }> = ({ indice, duracao, entrada, saida, primeiroPlano, suave, children }) => {
   const f = useCurrentFrame();
   const q = interpolate(f, [0, duracao + TRANSICAO], [0, 1], { ...cl, easing: Easing.inOut(Easing.sin) });
-  const pIn = entrada ? interpolate(f, [0, TRANSICAO], [1, 0], { ...cl, easing: Easing.out(Easing.cubic) }) : 0;
-  const pOut = saida ? interpolate(f, [duracao, duracao + TRANSICAO], [0, 1], { ...cl, easing: Easing.in(Easing.cubic) }) : 0;
+  const suaviza = Easing.bezier(0.45, 0, 0.25, 1);
+  const pIn = entrada ? interpolate(f, [0, TRANSICAO], [1, 0], { ...cl, easing: suaviza }) : 0;
+  const pOut = saida ? interpolate(f, [duracao, duracao + TRANSICAO], [0, 1], { ...cl, easing: suaviza }) : 0;
   const t = pOut > 0 ? estilo(saida!, pOut, 1) : estilo(entrada ?? "zoom", pIn, -1);
   return (
     <AbsoluteFill style={{ perspective: 1400, perspectiveOrigin: "50% 38%" }}>

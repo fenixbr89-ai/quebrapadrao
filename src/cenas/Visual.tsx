@@ -202,7 +202,7 @@ export const Visual: React.FC<{ v: V; slug: string; roteiro: Roteiro }> = ({ v, 
     }
     case "rota": {
       const p = interpolate(f, [6, d * 0.8], [0, 1], { ...cl, easing: Easing.inOut(Easing.cubic) });
-      const a = { x: 250, y: CY - 170 };
+      const a = { x: 330, y: CY - 170 };
       const b = { x: 780, y: CY + 230 };
       const c = { x: 860, y: CY - 220 };
       const pt = (t: number) => ({
@@ -220,7 +220,7 @@ export const Visual: React.FC<{ v: V; slug: string; roteiro: Roteiro }> = ({ v, 
             <circle cx={b.x} cy={b.y} r={16} fill="#ffffff" />
             <circle cx={b.x} cy={b.y} r={34 + Math.sin(f / 5) * 6} stroke="#ffffff" strokeWidth={3} fill="none" opacity={0.5} />
           </svg>
-          <Rotulo texto={v.de} x={a.x} y={a.y + 60} tam={36} />
+          <Rotulo texto={v.de} x={Math.max(a.x, 260)} y={a.y - 115} tam={36} />
           <Rotulo texto={v.para} x={b.x} y={b.y + 125} tam={40} cor="#ffffff" />
           <div style={{ position: "absolute", left: atual.x, top: atual.y, transform: "translate(-50%,-50%)" }}>
             <Icone3D nome={v.nome} tamanho={150} />
