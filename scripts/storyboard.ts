@@ -20,6 +20,7 @@ const pasta = path.join(raiz, "videos", slug);
 const roteiro: Roteiro = JSON.parse(readFileSync(path.join(pasta, "roteiro.json"), "utf8"));
 const faltando = roteiro.cenas
   .map((c) => ("imagem" in c.visual ? c.visual.imagem : null))
+  .concat(Object.values(roteiro.fotosIcones ?? {}).map((v) => v.split("|")[0]))
   .filter((x): x is string => !!x && !existsSync(path.join(pasta, x)));
 if (faltando.length) throw new Error(`Imagens ausentes: ${faltando.join(", ")}`);
 

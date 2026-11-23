@@ -2,6 +2,15 @@
   "slug": "2026-11-23-brasil-nao-tinha-cafe",
   "titulo": "O Brasil não tinha café",
   "pergunta": "qual comida você jurava que era brasileira?",
+  "fotosIcones": {
+    "cafe": "imagens/icones/cafe.jpg",
+    "boi": "imagens/icones/boi.jpg",
+    "cavalo": "imagens/icones/cavalo.jpg|62% 30%",
+    "tomate": "imagens/icones/tomate.jpg|100% 55%",
+    "batata": "imagens/icones/batata.jpg",
+    "chocolate": "imagens/icones/chocolate.jpg",
+    "cana": "imagens/icones/cana.jpg|62% 75%"
+  },
   "cenas": [
     {
       "id": "gancho",
@@ -19,7 +28,6 @@
       "visual": {
         "tipo": "foto",
         "imagem": "imagens/cafe.jpg",
-        "pb": false,
         "satelites": [
           "cafe",
           "boi",

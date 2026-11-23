@@ -15,7 +15,7 @@ export const Icone3D: React.FC<{ nome: string; variante?: Cor; tamanho: number; 
   style,
 }) => {
   const vermelho = variante === "vermelho";
-  const foto = useContext(FotosIcones)[nome];
+  const [foto, posicao] = (useContext(FotosIcones)[nome] ?? "").split("|");
   const raio = tamanho * 0.28;
   return (
     <div
@@ -37,7 +37,7 @@ export const Icone3D: React.FC<{ nome: string; variante?: Cor; tamanho: number; 
         ...style,
       }}
     >
-      {foto ? (
+      {foto && !vermelho ? (
         <Img
           src={staticFile(foto)}
           style={{
@@ -47,6 +47,7 @@ export const Icone3D: React.FC<{ nome: string; variante?: Cor; tamanho: number; 
             height: tamanho * 0.91,
             borderRadius: raio * 0.85,
             objectFit: "cover",
+            objectPosition: posicao || "50% 50%",
             filter: `grayscale(1) contrast(1.12) brightness(1.02)`,
             boxShadow: "inset 0 0 0 1px rgba(0,0,0,0.2)",
           }}
