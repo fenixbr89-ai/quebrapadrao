@@ -137,8 +137,8 @@ quebrapadrao/
 
 - Formato 1080×1920, 30 fps, ~45–75 s.
 - Execução em sessão de nuvem: Chromium disponível para render; registros npm/PyPI liberados.
-- Hosts externos (Wikimedia, Google Imagens, Hugging Face para modelo Whisper) podem estar
-  bloqueados pela política de rede — o builder deve verificar e, se preciso, pedir liberação.
+- Rede: Wikimedia (commons/upload), LOC (www/tile.loc.gov) e Hugging Face foram liberados no
+  ambiente "Remotion" e testados. Novo bloqueio → pedir liberação ao dono.
 - MP4 finais e áudios grandes não vão para o git (`.gitignore`), mas o vídeo é entregue ao dono.
 - Não usar Higgsfield (nem outra geração de imagem paga) em nenhuma etapa.
 - Sem música/efeitos: o vídeo sai só com a narração; o dono adiciona trilha e efeitos depois no editor dele.
