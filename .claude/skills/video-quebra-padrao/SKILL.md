@@ -6,7 +6,7 @@ description: Produz um vídeo do @quebra.padrao do tema até o MP4 sincronizado 
 # Vídeo @quebra.padrao
 
 Antes de tudo, leia `estilo/GUIA.md` e olhe `estilo/referencias/titanic-prancha.jpg` e `estilo/roteiro-modelo-titanic.md`.
-**O vídeo do Titanic é sempre a referência.** Fale com o dono em português, de forma simples.
+**O estilo do vídeo do café (`estilo/referencias/cafe-prancha.jpg`) é o padrão fixo**, com estrutura de roteiro do Titanic. Reaproveite `src/` e copie o formato de `videos/2026-11-23-brasil-nao-tinha-cafe/roteiro.json` (cenas + `fotosIcones`). Fale com o dono em português, de forma simples.
 
 ## Fluxo (decidido pelo dono)
 
@@ -24,7 +24,9 @@ Antes de tudo, leia `estilo/GUIA.md` e olhe `estilo/referencias/titanic-prancha.
 - Componentes esperados: fundo com vinheta, legenda karaokê, foto em moldura, ícone 3D em código (branco/vermelho), gráficos em linha, contador, card de vidro, texto circular, anéis, câmera 3D/profundidade, card final Seguir.
 - Imagens: domínio público/licença livre (Wikimedia Commons, Library of Congress). Fonte e licença em `videos/<slug>/imagens/FONTES.md`. Sem imagem livre → ícone/gráfico.
 - **Não usar Higgsfield** nem geração de imagem paga.
-- Compare cada storyboard com `estilo/referencias/titanic/` antes de enviar: se não parece o Titanic, ajuste.
+- Compare cada storyboard com `estilo/referencias/cafe-prancha.jpg` antes de enviar: se não parece com ele, ajuste.
+- Coisas reais (animais, comidas, objetos) = foto livre P&B dentro do ícone (`fotosIcones`); símbolos (alerta, X, setas, pessoa) desenhados. Vermelho só em 2–3 momentos. Fotos CC BY-SA/GFDL: crédito na legenda do post.
+- Storyboard: `npm run storyboard -- <slug> [--cenas id1,id2]`.
 
 ## Transcrição
 `python3 scripts/transcrever.py <audio> <saida.json>` → lista `{palavra, inicio, fim}` em segundos (Vosk, modelo pt; instruções no próprio script). O Whisper via Hugging Face foi bloqueado pela rede do ambiente; o Vosk (alphacephei.com) funciona.

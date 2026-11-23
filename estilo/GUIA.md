@@ -1,6 +1,6 @@
 # Guia de estilo — @quebra.padrao
 
-**Referência principal: o vídeo do Titanic** (`referencias/titanic-prancha.jpg` e `referencias/titanic/quadro-NN.jpg`, um quadro a cada 2 s).
+**Padrão fixo desde 2026-11-23: o estilo do vídeo do café** (`referencias/cafe-prancha.jpg`; código em `src/`, exemplo em `videos/2026-11-23-brasil-nao-tinha-cafe/roteiro.json`). Ele segue a estrutura e o ritmo do **vídeo do Titanic** (`referencias/titanic-prancha.jpg` e `referencias/titanic/quadro-NN.jpg`, um quadro a cada 2 s).
 Wizebot e Cervello (`referencias/movimento-*`) são só referência de **técnica de movimento** — nunca copiar marca, logo ou a paleta azul/verde.
 
 ## Formato
