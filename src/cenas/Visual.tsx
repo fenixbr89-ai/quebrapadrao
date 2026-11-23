@@ -72,7 +72,7 @@ const Rotulo: React.FC<{ texto: string; y: number; x?: number; tam?: number; cor
   </div>
 );
 
-const MarcaX: React.FC<{ tamanho: number }> = ({ tamanho }) => <Icone3D nome="x" variante="vermelho" tamanho={tamanho} />;
+const MarcaX: React.FC<{ tamanho: number }> = ({ tamanho }) => <Icone3D nome="x" tamanho={tamanho} />;
 
 export const Visual: React.FC<{ v: V; slug: string; roteiro: Roteiro }> = ({ v, slug, roteiro }) => {
   const f = useCurrentFrame();
@@ -163,7 +163,7 @@ export const Visual: React.FC<{ v: V; slug: string; roteiro: Roteiro }> = ({ v, 
           </div>
           {(v.carga ?? []).map((n, i) => (
             <Entra key={i} x={x - 160 + i * 160} y={CY - 290} atraso={10 + i * 6} de={0.3}>
-              <Icone3D nome={n} tamanho={110} variante={n === "virus" || n === "alerta" ? "vermelho" : "branco"} />
+              <Icone3D nome={n} tamanho={110} variante="branco" />
             </Entra>
           ))}
         </>
@@ -183,7 +183,7 @@ export const Visual: React.FC<{ v: V; slug: string; roteiro: Roteiro }> = ({ v, 
               cx={CX}
               cy={CY}
               r={r}
-              stroke="#E53935"
+              stroke="#ffffff"
               strokeWidth={22}
               fill="none"
               strokeDasharray={circ}
@@ -219,8 +219,8 @@ export const Visual: React.FC<{ v: V; slug: string; roteiro: Roteiro }> = ({ v, 
             <path d={caminho} stroke="#3a3a3a" strokeWidth={5} strokeDasharray="4 18" strokeLinecap="round" fill="none" />
             <path d={caminho} stroke="#ffffff" strokeWidth={6} fill="none" pathLength={1} strokeDasharray="1 1" strokeDashoffset={1 - p} />
             <circle cx={a.x} cy={a.y} r={16} fill="#ffffff" />
-            <circle cx={b.x} cy={b.y} r={16} fill="#E53935" />
-            <circle cx={b.x} cy={b.y} r={34 + Math.sin(f / 5) * 6} stroke="#E53935" strokeWidth={3} fill="none" opacity={0.6} />
+            <circle cx={b.x} cy={b.y} r={16} fill="#ffffff" />
+            <circle cx={b.x} cy={b.y} r={34 + Math.sin(f / 5) * 6} stroke="#ffffff" strokeWidth={3} fill="none" opacity={0.5} />
           </svg>
           <Rotulo texto={v.de} x={a.x} y={a.y + 60} tam={36} />
           <Rotulo texto={v.para} x={b.x} y={b.y + 125} tam={40} cor="#ffffff" />

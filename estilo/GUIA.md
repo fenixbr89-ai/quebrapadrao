@@ -9,7 +9,7 @@ Wizebot e Cervello (`referencias/movimento-*`) são só referência de **técnic
 
 ## Cores
 - Fundo **preto** com vinheta radial suave (centro ~#1a1a1a → bordas #000).
-- Branco, cinzas e **vermelho `#E53935`** — o vermelho é só para alerta, perigo, erro ou a palavra mais forte da frase.
+- Branco, cinzas e **vermelho `#E53935`** como única cor de destaque, usada em **no máximo 2–3 momentos por vídeo** (palavra mais forte do gancho, número de impacto, perigo). Nunca como decoração. Nada de outras cores.
 - Uma cena "clara" (fundo cinza) pode aparecer uma vez como quebra de ritmo (no Titanic: contagem "5" com iceberg).
 
 ## Legenda (o elemento mais importante)
@@ -21,7 +21,7 @@ Wizebot e Cervello (`referencias/movimento-*`) são só referência de **técnic
 ## Elementos visuais
 - **Fotos reais** (P&B quando históricas) em molduras arredondadas (raio ~18 px, borda escura grossa, sombra), flutuando com leve movimento/zoom. Ex.: navio, iceberg, capitão, navio vizinho, bote.
 - **Ícones 3D** estilo "app icon": azulejo arredondado com volume (brilho no topo, sombra embaixo), **branco** com símbolo escuro, ou **vermelho** com símbolo branco (alerta, cadeado). Pequenos ícones-satélite desfocados em volta do principal dão profundidade.
-  - **Coisas reais ganham a cor real** (dono, 2026-11-23): café marrom, cavalo marrom, tomate vermelho-tomate com folha verde, cana verde, batata bege, chocolate marrom. Símbolos abstratos (alerta, X, setas, pessoa, globo, prato) continuam preto/branco/vermelho. Cores em `coresNaturais` (`src/componentes/Glifos.tsx`).
+  - **Coisas reais = foto real P&B dentro do azulejo** (dono, 2026-11-23): café, cavalo, boi, tomate etc. viram foto livre em preto e branco recortada no ícone (`fotosIcones` no roteiro.json). Símbolos abstratos (alerta, X, setas, pessoa) continuam desenhados.
   - **Feitos em código** (CSS/SVG em Remotion). Não usar Higgsfield nem geração de imagem paga.
 - **Gráficos em linha branca**: silhueta do navio e do iceberg numa linha d'água, velocímetro, casco com compartimentos enchendo de **vermelho**, anel com contador, número grande.
 - **Foto recortada sem moldura** para o momento de maior impacto (Titanic: jornaleiro com "TITANIC DISASTER", quadro 26).

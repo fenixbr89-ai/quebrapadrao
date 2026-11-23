@@ -16,7 +16,7 @@ export type Visual =
   | { tipo: "final" };
 
 export type Cena = { id: string; texto: string; destaques?: Destaque[]; visual: Visual };
-export type Roteiro = { slug: string; titulo: string; pergunta: string; cenas: Cena[] };
+export type Roteiro = { slug: string; titulo: string; pergunta: string; fotosIcones?: Record<string, string>; cenas: Cena[] };
 
 export type PalavraTempo = { palavra: string; inicio: number; fim: number };
 export type Timing = { palavras: PalavraTempo[]; duracaoAudio: number | null };

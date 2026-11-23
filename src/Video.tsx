@@ -6,6 +6,7 @@ import { calcularCenas, estimarTiming, FPS } from "./timing";
 import { Fundo } from "./componentes/Fundo";
 import { Legenda } from "./componentes/Legenda";
 import { Visual } from "./cenas/Visual";
+import { FotosIcones } from "./componentes/Icone3D";
 import "./componentes/fonte";
 
 export const calcularMetadata: CalculateMetadataFunction<VideoProps> = ({ props }) => {
@@ -22,6 +23,7 @@ export const Video: React.FC<VideoProps> = ({ roteiro, timing, audio }) => {
   const cenas = calcularCenas(roteiro, t, fps);
   const tempo = frame / fps;
   return (
+    <FotosIcones.Provider value={Object.fromEntries(Object.entries(roteiro.fotosIcones ?? {}).map(([k, v]) => [k, `${roteiro.slug}/${v}`]))}>
     <AbsoluteFill style={{ backgroundColor: "#000" }}>
       <Fundo />
       {roteiro.cenas.map((c, i) => (
@@ -36,5 +38,6 @@ export const Video: React.FC<VideoProps> = ({ roteiro, timing, audio }) => {
       ))}
       {audio ? <Audio src={staticFile(audio)} /> : null}
     </AbsoluteFill>
+    </FotosIcones.Provider>
   );
 };
