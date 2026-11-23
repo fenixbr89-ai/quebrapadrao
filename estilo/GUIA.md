@@ -31,6 +31,12 @@ Wizebot e Cervello (`referencias/movimento-*`) são só referência de **técnic
 - Penúltima cena: "recapitulação" — foto central com os ícones das causas em volta.
 
 ## Movimento (técnicas a aplicar, vindas de Wizebot/Cervello)
+**Implementado em `src/componentes/Camera.tsx` (aplicado automaticamente a toda cena — dono pediu em 2026-11-23):**
+- Transições de 10 quadros centradas na troca de frase, alternando: zoom atravessando (sai crescendo e borrando, a próxima nasce do fundo), chicote lateral e vertical com rastro de movimento, giro 3D.
+- Câmera 3D contínua em cada cena, variando: aproximação com inclinação, órbita lateral (rotateY), subida com inclinação, leve giro (dutch).
+- A cada 3 cenas, um ícone grande e desfocado passa na frente da câmera (profundidade).
+- Pergunta e card final ficam com câmera suave.
+
 - Câmera com leve deriva/zoom contínuo em toda cena; nada fica parado.
 - Inclinação 3D (perspectiva) em fotos e cards ao entrar/sair.
 - Profundidade de campo: elementos em primeiro plano desfocados cruzando a tela.

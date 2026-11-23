@@ -77,8 +77,6 @@ const MarcaX: React.FC<{ tamanho: number }> = ({ tamanho }) => <Icone3D nome="x"
 export const Visual: React.FC<{ v: V; slug: string; roteiro: Roteiro }> = ({ v, slug, roteiro }) => {
   const f = useCurrentFrame();
   const { durationInFrames: d } = useVideoConfig();
-  const zoom = interpolate(f, [0, d], [1, 1.05]);
-  const deriva = interpolate(f, [0, d], [0, -14]);
 
   let conteudo: React.ReactNode = null;
   switch (v.tipo) {
@@ -322,9 +320,8 @@ export const Visual: React.FC<{ v: V; slug: string; roteiro: Roteiro }> = ({ v, 
       break;
   }
 
-  const semCamera = v.tipo === "final" || v.tipo === "balao";
   return (
-    <AbsoluteFill style={{ transform: semCamera ? undefined : `translateY(${deriva}px) scale(${zoom})`, transformOrigin: `${CX}px ${CY}px` }}>
+    <AbsoluteFill>
       {conteudo}
     </AbsoluteFill>
   );
