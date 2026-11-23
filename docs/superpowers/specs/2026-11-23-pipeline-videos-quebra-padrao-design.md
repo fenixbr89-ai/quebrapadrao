@@ -1,6 +1,6 @@
 # Pipeline de vídeos @quebra.padrao — Design
 
-Data: 2026-11-23 · Status: rascunho para aprovação
+Data: 2026-11-23 · Status: aguardando aprovação do dono
 
 ## 1. Intenção e o porquê
 
@@ -85,9 +85,11 @@ qualquer sessão do Claude aberta nesse repositório sabe executar o fluxo sozin
 - B — mockups gerados por IA: rápidos, porém o vídeo final divergiria do aprovado.
 
 **Ícones 3D**
-- *A — biblioteca fixa gerada uma vez por IA (Higgsfield), PNG transparente, reutilizada* (**escolhida**):
-  mais fiel ao Titanic e consistente entre vídeos.
-- B — ícones em código (SVG/CSS): grátis e infinitos, mas visual mais "chapado".
+- A — biblioteca fixa gerada por IA (Higgsfield): descartada pelo dono (não usar Higgsfield).
+- *B — ícones em código* (**escolhida pelo dono**): componente `Icone3D` = azulejo arredondado com
+  volume simulado (gradientes em camadas, brilho no topo, sombra interna e externa, leve bisel)
+  + glifo SVG; variantes branca e vermelha. Grátis, infinito, consistente. O builder deve buscar
+  o máximo de "volume" possível para chegar perto dos ícones do Titanic.
 - (Descartada) gerar ícones novos por vídeo: inconsistência visual.
 
 **Organização**
@@ -108,7 +110,7 @@ quebrapadrao/
 │   │                               # CardVidro, TextoCircular, Aneis, CardSeguir, Fundo...
 │   ├── cenas/                      # tipos de cena reutilizáveis (foto, ícone, gráfico, contador, final)
 │   └── Root.tsx                    # registra uma composição por vídeo
-├── assets/icones/                  # biblioteca fixa de ícones 3D
+├── src/icones/                      # glifos SVG da biblioteca (usados pelo Icone3D)
 ├── videos/<AAAA-MM-DD-slug>/
 │   ├── roteiro.json                # cenas, texto de cada cena, palavras-chave, assets
 │   ├── narracao.txt                # texto para o dono gravar
@@ -138,7 +140,8 @@ quebrapadrao/
 - Hosts externos (Wikimedia, Google Imagens, Hugging Face para modelo Whisper) podem estar
   bloqueados pela política de rede — o builder deve verificar e, se preciso, pedir liberação.
 - MP4 finais e áudios grandes não vão para o git (`.gitignore`), mas o vídeo é entregue ao dono.
-- Ícones via Higgsfield consomem créditos da conta do dono — gerar a biblioteca uma vez.
+- Não usar Higgsfield (nem outra geração de imagem paga) em nenhuma etapa.
+- Sem música/efeitos: o vídeo sai só com a narração; o dono adiciona trilha e efeitos depois no editor dele.
 
 ## 9. Deixado para o builder
 
@@ -161,7 +164,7 @@ quebrapadrao/
   performar" é julgamento, refinado com prints do painel que o dono enviar.
 - **Referências visuais**: quadros dos 3 vídeos salvos em `estilo/referencias/`.
 
-## 11. Perguntas em aberto para o dono
+## 11. Respostas do dono
 
-- Música de fundo / efeitos sonoros: quem coloca?
-- Orçamento de créditos Higgsfield para a biblioteca de ícones e para ícones novos no futuro.
+- Música de fundo / efeitos sonoros: o dono coloca depois. Entregar MP4 só com a narração.
+- Higgsfield: não usar. Ícones feitos em código (seção 5).
