@@ -5,7 +5,9 @@
   "scripts": {
     "studio": "remotion studio",
     "typecheck": "tsc --noEmit",
-    "storyboard": "tsx scripts/storyboard.ts"
+    "storyboard": "tsx scripts/storyboard.ts",
+    "sincronizar": "tsx scripts/sincronizar.ts",
+    "render": "tsx scripts/render.ts"
   },
   "dependencies": {
     "@fontsource/inter": "^5.2.8",

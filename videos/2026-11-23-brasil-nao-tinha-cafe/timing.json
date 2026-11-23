@@ -1,0 +1,710 @@
+{
+ "palavras": [
+  {
+   "palavra": "O",
+   "inicio": 0.24,
+   "fim": 0.36
+  },
+  {
+   "palavra": "Brasil",
+   "inicio": 0.36,
+   "fim": 0.84
+  },
+  {
+   "palavra": "não",
+   "inicio": 0.84,
+   "fim": 1.05
+  },
+  {
+   "palavra": "tinha",
+   "inicio": 1.05,
+   "fim": 1.346
+  },
+  {
+   "palavra": "café.",
+   "inicio": 1.35,
+   "fim": 1.71
+  },
+  {
+   "palavra": "Nem",
+   "inicio": 2.25,
+   "fim": 2.49
+  },
+  {
+   "palavra": "boi.",
+   "inicio": 2.49,
+   "fim": 2.82
+  },
+  {
+   "palavra": "Nem",
+   "inicio": 3.18,
+   "fim": 3.39
+  },
+  {
+   "palavra": "cana-de-açúcar.",
+   "inicio": 3.391,
+   "fim": 4.47
+  },
+  {
+   "palavra": "Tudo",
+   "inicio": 5.13,
+   "fim": 5.43
+  },
+  {
+   "palavra": "isso",
+   "inicio": 5.43,
+   "fim": 5.67
+  },
+  {
+   "palavra": "chegou",
+   "inicio": 5.699,
+   "fim": 5.94
+  },
+  {
+   "palavra": "de",
+   "inicio": 5.94,
+   "fim": 6.06
+  },
+  {
+   "palavra": "navio,",
+   "inicio": 6.06,
+   "fim": 6.54
+  },
+  {
+   "palavra": "depois",
+   "inicio": 6.75,
+   "fim": 7.202
+  },
+  {
+   "palavra": "de",
+   "inicio": 7.202,
+   "fim": 7.289
+  },
+  {
+   "palavra": "1500.",
+   "inicio": 7.305,
+   "fim": 8.22
+  },
+  {
+   "palavra": "O",
+   "inicio": 8.91,
+   "fim": 9
+  },
+  {
+   "palavra": "café",
+   "inicio": 9,
+   "fim": 9.361
+  },
+  {
+   "palavra": "só",
+   "inicio": 9.361,
+   "fim": 9.539
+  },
+  {
+   "palavra": "chegou",
+   "inicio": 9.539,
+   "fim": 9.81
+  },
+  {
+   "palavra": "em",
+   "inicio": 9.81,
+   "fim": 9.99
+  },
+  {
+   "palavra": "1727.",
+   "inicio": 9.99,
+   "fim": 11.46
+  },
+  {
+   "palavra": "Dizem",
+   "inicio": 12.36,
+   "fim": 12.447
+  },
+  {
+   "palavra": "que",
+   "inicio": 12.447,
+   "fim": 12.57
+  },
+  {
+   "palavra": "veio",
+   "inicio": 12.57,
+   "fim": 12.78
+  },
+  {
+   "palavra": "escondido",
+   "inicio": 12.78,
+   "fim": 13.44
+  },
+  {
+   "palavra": "num",
+   "inicio": 13.44,
+   "fim": 13.558
+  },
+  {
+   "palavra": "buquê,",
+   "inicio": 13.561,
+   "fim": 14.04
+  },
+  {
+   "palavra": "da",
+   "inicio": 14.37,
+   "fim": 14.52
+  },
+  {
+   "palavra": "Guiana",
+   "inicio": 14.52,
+   "fim": 14.85
+  },
+  {
+   "palavra": "Francesa",
+   "inicio": 14.85,
+   "fim": 15.45
+  },
+  {
+   "palavra": "até",
+   "inicio": 15.54,
+   "fim": 15.81
+  },
+  {
+   "palavra": "Belém.",
+   "inicio": 15.81,
+   "fim": 16.11
+  },
+  {
+   "palavra": "Os",
+   "inicio": 16.89,
+   "fim": 17.07
+  },
+  {
+   "palavra": "historiadores",
+   "inicio": 17.07,
+   "fim": 17.789
+  },
+  {
+   "palavra": "chamam",
+   "inicio": 17.79,
+   "fim": 18.12
+  },
+  {
+   "palavra": "isso",
+   "inicio": 18.12,
+   "fim": 18.33
+  },
+  {
+   "palavra": "de",
+   "inicio": 18.33,
+   "fim": 18.45
+  },
+  {
+   "palavra": "Troca",
+   "inicio": 18.45,
+   "fim": 18.96
+  },
+  {
+   "palavra": "Colombiana.",
+   "inicio": 18.96,
+   "fim": 19.71
+  },
+  {
+   "palavra": "A",
+   "inicio": 20.4,
+   "fim": 20.49
+  },
+  {
+   "palavra": "maior",
+   "inicio": 20.49,
+   "fim": 20.88
+  },
+  {
+   "palavra": "troca",
+   "inicio": 20.881,
+   "fim": 21.33
+  },
+  {
+   "palavra": "de",
+   "inicio": 21.33,
+   "fim": 21.45
+  },
+  {
+   "palavra": "seres",
+   "inicio": 21.45,
+   "fim": 21.75
+  },
+  {
+   "palavra": "vivos",
+   "inicio": 21.75,
+   "fim": 22.08
+  },
+  {
+   "palavra": "da",
+   "inicio": 22.08,
+   "fim": 22.2
+  },
+  {
+   "palavra": "história.",
+   "inicio": 22.2,
+   "fim": 22.77
+  },
+  {
+   "palavra": "E",
+   "inicio": 23.46,
+   "fim": 23.61
+  },
+  {
+   "palavra": "ela",
+   "inicio": 23.61,
+   "fim": 23.76
+  },
+  {
+   "palavra": "foi",
+   "inicio": 23.76,
+   "fim": 23.91
+  },
+  {
+   "palavra": "nos",
+   "inicio": 23.91,
+   "fim": 24.09
+  },
+  {
+   "palavra": "dois",
+   "inicio": 24.09,
+   "fim": 24.3
+  },
+  {
+   "palavra": "sentidos.",
+   "inicio": 24.3,
+   "fim": 24.84
+  },
+  {
+   "palavra": "A",
+   "inicio": 25.56,
+   "fim": 25.65
+  },
+  {
+   "palavra": "Itália",
+   "inicio": 25.65,
+   "fim": 26.1
+  },
+  {
+   "palavra": "não",
+   "inicio": 26.1,
+   "fim": 26.28
+  },
+  {
+   "palavra": "tinha",
+   "inicio": 26.28,
+   "fim": 26.55
+  },
+  {
+   "palavra": "tomate.",
+   "inicio": 26.55,
+   "fim": 26.999
+  },
+  {
+   "palavra": "A",
+   "inicio": 27.45,
+   "fim": 27.54
+  },
+  {
+   "palavra": "Irlanda",
+   "inicio": 27.54,
+   "fim": 28.02
+  },
+  {
+   "palavra": "não",
+   "inicio": 28.02,
+   "fim": 28.17
+  },
+  {
+   "palavra": "tinha",
+   "inicio": 28.17,
+   "fim": 28.404
+  },
+  {
+   "palavra": "batata.",
+   "inicio": 28.41,
+   "fim": 28.95
+  },
+  {
+   "palavra": "E",
+   "inicio": 29.34,
+   "fim": 29.43
+  },
+  {
+   "palavra": "a",
+   "inicio": 29.43,
+   "fim": 29.49
+  },
+  {
+   "palavra": "Suíça",
+   "inicio": 29.49,
+   "fim": 30
+  },
+  {
+   "palavra": "não",
+   "inicio": 30.06,
+   "fim": 30.24
+  },
+  {
+   "palavra": "tinha",
+   "inicio": 30.24,
+   "fim": 30.48
+  },
+  {
+   "palavra": "chocolate.",
+   "inicio": 30.48,
+   "fim": 31.049
+  },
+  {
+   "palavra": "Tudo",
+   "inicio": 31.71,
+   "fim": 31.98
+  },
+  {
+   "palavra": "isso",
+   "inicio": 31.98,
+   "fim": 32.22
+  },
+  {
+   "palavra": "saiu",
+   "inicio": 32.22,
+   "fim": 32.52
+  },
+  {
+   "palavra": "da",
+   "inicio": 32.52,
+   "fim": 32.7
+  },
+  {
+   "palavra": "América.",
+   "inicio": 32.7,
+   "fim": 33.3
+  },
+  {
+   "palavra": "Mas",
+   "inicio": 34.02,
+   "fim": 34.23
+  },
+  {
+   "palavra": "os",
+   "inicio": 34.23,
+   "fim": 34.35
+  },
+  {
+   "palavra": "navios",
+   "inicio": 34.35,
+   "fim": 34.74
+  },
+  {
+   "palavra": "trouxeram",
+   "inicio": 34.74,
+   "fim": 35.13
+  },
+  {
+   "palavra": "uma",
+   "inicio": 35.13,
+   "fim": 35.31
+  },
+  {
+   "palavra": "coisa",
+   "inicio": 35.31,
+   "fim": 35.58
+  },
+  {
+   "palavra": "pior.",
+   "inicio": 35.58,
+   "fim": 36.03
+  },
+  {
+   "palavra": "Doenças.",
+   "inicio": 36.78,
+   "fim": 37.499
+  },
+  {
+   "palavra": "Varíola,",
+   "inicio": 38.04,
+   "fim": 38.64
+  },
+  {
+   "palavra": "sarampo",
+   "inicio": 38.7,
+   "fim": 39.48
+  },
+  {
+   "palavra": "e",
+   "inicio": 39.54,
+   "fim": 39.66
+  },
+  {
+   "palavra": "gripe.",
+   "inicio": 39.684,
+   "fim": 40.11
+  },
+  {
+   "palavra": "Em",
+   "inicio": 40.86,
+   "fim": 40.98
+  },
+  {
+   "palavra": "muitos",
+   "inicio": 40.98,
+   "fim": 41.34
+  },
+  {
+   "palavra": "lugares,",
+   "inicio": 41.34,
+   "fim": 41.85
+  },
+  {
+   "palavra": "até",
+   "inicio": 41.85,
+   "fim": 42.06
+  },
+  {
+   "palavra": "nove",
+   "inicio": 42.061,
+   "fim": 42.51
+  },
+  {
+   "palavra": "em",
+   "inicio": 42.51,
+   "fim": 42.6
+  },
+  {
+   "palavra": "cada",
+   "inicio": 42.6,
+   "fim": 42.87
+  },
+  {
+   "palavra": "dez",
+   "inicio": 42.87,
+   "fim": 43.23
+  },
+  {
+   "palavra": "nativos",
+   "inicio": 43.23,
+   "fim": 43.74
+  },
+  {
+   "palavra": "morreram.",
+   "inicio": 43.74,
+   "fim": 44.13
+  },
+  {
+   "palavra": "E",
+   "inicio": 44.91,
+   "fim": 45
+  },
+  {
+   "palavra": "tem",
+   "inicio": 45,
+   "fim": 45.18
+  },
+  {
+   "palavra": "mais:",
+   "inicio": 45.18,
+   "fim": 45.48
+  },
+  {
+   "palavra": "o",
+   "inicio": 45.96,
+   "fim": 46.08
+  },
+  {
+   "palavra": "cavalo",
+   "inicio": 46.08,
+   "fim": 46.559
+  },
+  {
+   "palavra": "surgiu",
+   "inicio": 46.56,
+   "fim": 46.95
+  },
+  {
+   "palavra": "aqui,",
+   "inicio": 46.951,
+   "fim": 47.31
+  },
+  {
+   "palavra": "na",
+   "inicio": 47.55,
+   "fim": 47.7
+  },
+  {
+   "palavra": "América.",
+   "inicio": 47.7,
+   "fim": 48.24
+  },
+  {
+   "palavra": "Mas",
+   "inicio": 48.87,
+   "fim": 49.05
+  },
+  {
+   "palavra": "foi",
+   "inicio": 49.05,
+   "fim": 49.23
+  },
+  {
+   "palavra": "extinto",
+   "inicio": 49.23,
+   "fim": 49.741
+  },
+  {
+   "palavra": "há",
+   "inicio": 49.741,
+   "fim": 49.826
+  },
+  {
+   "palavra": "uns",
+   "inicio": 49.826,
+   "fim": 50.04
+  },
+  {
+   "palavra": "10",
+   "inicio": 50.07,
+   "fim": 50.43
+  },
+  {
+   "palavra": "mil",
+   "inicio": 50.46,
+   "fim": 50.76
+  },
+  {
+   "palavra": "anos.",
+   "inicio": 50.76,
+   "fim": 51.12
+  },
+  {
+   "palavra": "Quem",
+   "inicio": 51.78,
+   "fim": 51.96
+  },
+  {
+   "palavra": "trouxe",
+   "inicio": 51.962,
+   "fim": 52.32
+  },
+  {
+   "palavra": "ele",
+   "inicio": 52.32,
+   "fim": 52.379999999999995
+  },
+  {
+   "palavra": "de",
+   "inicio": 52.44,
+   "fim": 52.56
+  },
+  {
+   "palavra": "volta",
+   "inicio": 52.56,
+   "fim": 52.98
+  },
+  {
+   "palavra": "foram",
+   "inicio": 52.98,
+   "fim": 53.22
+  },
+  {
+   "palavra": "os",
+   "inicio": 53.22,
+   "fim": 53.34
+  },
+  {
+   "palavra": "europeus.",
+   "inicio": 53.34,
+   "fim": 53.97
+  },
+  {
+   "palavra": "O",
+   "inicio": 54.66,
+   "fim": 54.78
+  },
+  {
+   "palavra": "mundo",
+   "inicio": 54.78,
+   "fim": 55.17
+  },
+  {
+   "palavra": "inteiro",
+   "inicio": 55.17,
+   "fim": 55.56
+  },
+  {
+   "palavra": "mudou",
+   "inicio": 55.59,
+   "fim": 56.01
+  },
+  {
+   "palavra": "de",
+   "inicio": 56.01,
+   "fim": 56.13
+  },
+  {
+   "palavra": "prato.",
+   "inicio": 56.13,
+   "fim": 56.52
+  },
+  {
+   "palavra": "Qual",
+   "inicio": 57.18,
+   "fim": 57.42
+  },
+  {
+   "palavra": "comida",
+   "inicio": 57.42,
+   "fim": 57.81
+  },
+  {
+   "palavra": "você",
+   "inicio": 57.81,
+   "fim": 58.079
+  },
+  {
+   "palavra": "jurava",
+   "inicio": 58.081,
+   "fim": 58.68
+  },
+  {
+   "palavra": "que",
+   "inicio": 58.68,
+   "fim": 58.83
+  },
+  {
+   "palavra": "era",
+   "inicio": 58.83,
+   "fim": 58.98
+  },
+  {
+   "palavra": "brasileira?",
+   "inicio": 58.982,
+   "fim": 59.58
+  },
+  {
+   "palavra": "Comenta.",
+   "inicio": 60.12,
+   "fim": 60.362
+  },
+  {
+   "palavra": "E",
+   "inicio": 61.286,
+   "fim": 61.375
+  },
+  {
+   "palavra": "segue",
+   "inicio": 61.375,
+   "fim": 61.68
+  },
+  {
+   "palavra": "o",
+   "inicio": 61.68,
+   "fim": 61.74
+  },
+  {
+   "palavra": "@quebra.padrao.",
+   "inicio": 61.741,
+   "fim": 62.4
+  }
+ ],
+ "duracaoAudio": 62.72
+}

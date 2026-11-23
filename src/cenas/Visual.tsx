@@ -171,7 +171,7 @@ export const Visual: React.FC<{ v: V; slug: string; roteiro: Roteiro }> = ({ v, 
       break;
     }
     case "contador": {
-      const p = interpolate(f, [4, d * 0.7], [0, 1], { ...cl, easing: Easing.out(Easing.cubic) });
+      const p = interpolate(f, [2, Math.min(28, d * 0.6)], [0, 1], { ...cl, easing: Easing.out(Easing.cubic) });
       const valor = Math.round(v.de + (v.para - v.de) * p);
       const r = 260;
       const circ = 2 * Math.PI * r;
