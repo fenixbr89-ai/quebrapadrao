@@ -1,0 +1,26 @@
+{
+  "name": "quebrapadrao",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "studio": "remotion studio",
+    "typecheck": "tsc --noEmit",
+    "storyboard": "tsx scripts/storyboard.ts"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^5.2.8",
+    "@remotion/bundler": "4.0.380",
+    "@remotion/cli": "4.0.380",
+    "@remotion/google-fonts": "4.0.380",
+    "@remotion/renderer": "4.0.380",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "remotion": "4.0.380"
+  },
+  "devDependencies": {
+    "@types/node": "22.18.0",
+    "@types/react": "19.2.2",
+    "tsx": "4.20.6",
+    "typescript": "5.9.3"
+  }
+}
