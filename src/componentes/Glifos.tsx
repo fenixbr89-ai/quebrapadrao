@@ -64,8 +64,10 @@ const Navio: G = ({ c }) => (
 const Tomate: G = ({ c }) => (
   <g fill={c}>
     <path d="M50 30 c26 0 38 14 36 30 c-2 18 -18 28 -36 28 c-18 0 -34 -10 -36 -28 c-2 -16 10 -30 36 -30z" />
-    <path d="M50 32 l-14 -8 l10 -2 l-6 -10 l10 6 l0 -10 l6 10 l8 -6 l-4 10 l12 0 z" />
   </g>
+);
+const TomateFolha: G = ({ c }) => (
+  <path d="M50 32 l-14 -8 l10 -2 l-6 -10 l10 6 l0 -10 l6 10 l8 -6 l-4 10 l12 0 z" fill={c} />
 );
 
 const Batata: G = ({ c }) => (
@@ -188,7 +190,7 @@ export const glifos: Record<string, G[]> = {
   boi: [Boi, BoiDetalhe],
   cana: [Cana, CanaNos],
   navio: [Navio],
-  tomate: [Tomate],
+  tomate: [Tomate, TomateFolha],
   batata: [Batata, BatataOlhos],
   chocolate: [Chocolate],
   virus: [Virus],
@@ -204,14 +206,33 @@ export const glifos: Record<string, G[]> = {
   relogio: [Relogio],
 };
 
-/** Desenha um glifo; camadas de detalhe usam a cor de contraste. */
-export const Glifo: React.FC<{ nome: string; cor: string; contraste: string; tamanho: number }> = ({ nome, cor, contraste, tamanho }) => {
+/** Cores reais das coisas que existem (camada principal, detalhe). Símbolos abstratos não entram aqui. */
+export const coresNaturais: Record<string, [string, string]> = {
+  cafe: ["#6F4A2F", "#6F4A2F"],
+  boi: ["#7A4B2A", "#2B1A10"],
+  cana: ["#7DAA3C", "#4E7424"],
+  tomate: ["#D8432C", "#4E8A2E"],
+  batata: ["#C79A5B", "#7E5A2C"],
+  chocolate: ["#5A3520", "#5A3520"],
+  cavalo: ["#8A5A32", "#24160C"],
+  flor: ["#E58AA6", "#F4C542"],
+};
+
+/** Desenha um glifo; camadas de detalhe usam a cor de contraste (ou a cor real, se `natural`). */
+export const Glifo: React.FC<{ nome: string; cor: string; contraste: string; tamanho: number; natural?: boolean }> = ({
+  nome,
+  cor,
+  contraste,
+  tamanho,
+  natural,
+}) => {
   const camadas = glifos[nome];
   if (!camadas) throw new Error(`Glifo inexistente: ${nome}`);
+  const real = natural ? coresNaturais[nome] : undefined;
   return (
     <svg width={tamanho} height={tamanho} viewBox="0 0 100 100">
       {camadas.map((C, i) => (
-        <C key={i} c={i === 0 ? cor : contraste} />
+        <C key={i} c={real ? real[i === 0 ? 0 : 1] : i === 0 ? cor : contraste} />
       ))}
     </svg>
   );

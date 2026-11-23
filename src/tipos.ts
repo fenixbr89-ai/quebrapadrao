@@ -3,7 +3,7 @@ export type Destaque = { palavra: string; cor: Cor };
 
 /** Descrição do que aparece na tela em cada cena. */
 export type Visual =
-  | { tipo: "foto"; imagem: string; legenda?: string; satelites?: string[]; alertas?: string[] }
+  | { tipo: "foto"; imagem: string; pb?: boolean; legenda?: string; satelites?: string[]; alertas?: string[] }
   | { tipo: "icone"; nome: string; variante?: Cor; rotulo?: string; satelites?: string[]; marca?: "x" }
   | { tipo: "icones"; itens: { nome: string; variante?: Cor; marca?: "x" }[] }
   | { tipo: "navio"; carga?: string[]; variante?: Cor }

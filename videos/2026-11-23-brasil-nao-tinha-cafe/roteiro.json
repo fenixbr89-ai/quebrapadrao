@@ -5,7 +5,7 @@
   "cenas": [
     { "id": "gancho", "texto": "O Brasil não tinha café.",
       "destaques": [{ "palavra": "Brasil", "cor": "branco" }, { "palavra": "café.", "cor": "vermelho" }],
-      "visual": { "tipo": "foto", "imagem": "imagens/cafe.jpg", "satelites": ["cafe", "boi", "cana", "navio"] } },
+      "visual": { "tipo": "foto", "imagem": "imagens/cafe.jpg", "pb": false, "satelites": ["cafe", "boi", "cana", "navio"] } },
     { "id": "nem-boi", "texto": "Nem boi. Nem cana-de-açúcar.",
       "destaques": [{ "palavra": "boi.", "cor": "branco" }, { "palavra": "cana-de-açúcar.", "cor": "branco" }],
       "visual": { "tipo": "icones", "itens": [{ "nome": "boi", "marca": "x" }, { "nome": "cana", "marca": "x" }] } },

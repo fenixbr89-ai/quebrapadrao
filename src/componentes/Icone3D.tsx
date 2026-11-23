@@ -41,7 +41,7 @@ export const Icone3D: React.FC<{ nome: string; variante?: Cor; tamanho: number; 
         }}
       />
       <div style={{ filter: `drop-shadow(0 ${tamanho * 0.02}px ${tamanho * 0.02}px rgba(0,0,0,0.35))`, display: "flex" }}>
-        <Glifo nome={nome} cor={vermelho ? "#ffffff" : "#1b1b1b"} contraste={vermelho ? "#E53935" : "#ececec"} tamanho={tamanho * 0.74} />
+        <Glifo nome={nome} cor={vermelho ? "#ffffff" : "#1b1b1b"} contraste={vermelho ? "#E53935" : "#ececec"} tamanho={tamanho * 0.74} natural={!vermelho} />
       </div>
     </div>
   );
