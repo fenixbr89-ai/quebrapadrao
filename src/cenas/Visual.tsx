@@ -10,9 +10,15 @@ const CX = 540;
 const CY = 660;
 const cl = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 
+/** Elementos com entrada até este quadro aparecem junto com a transição (sem animação própria). */
+const ENTRADA_JUNTO_COM_TRANSICAO = 12;
+
 /** Entrada lisa (sem mola: a mola passava do ponto e dava uma "batidinha") com desfoque de movimento. */
 const useEntrada = (atraso = 0) => {
   const f = useCurrentFrame();
+  // Quem já está na cena desde o início chega só com a transição da câmera.
+  // Animar de novo aqui fazia o elemento "entrar duas vezes" (a batidinha).
+  if (atraso <= ENTRADA_JUNTO_COM_TRANSICAO) return { s: 1, blur: 0, f };
   const s = interpolate(f, [atraso, atraso + 14], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp", easing: Easing.bezier(0.22, 1, 0.36, 1) });
   return { s, blur: (1 - s) * 16, f };
 };
@@ -176,7 +182,7 @@ export const Visual: React.FC<{ v: V; slug: string; roteiro: Roteiro }> = ({ v, 
               const ang = -Math.PI / 2 + Math.max(0, f - t0) * ((2 * Math.PI) / volta) - (v.centro ? 0 : 0);
               const x = CX + Math.cos(ang) * R;
               const y = CY + Math.sin(ang) * R;
-              const vis = interpolate(f, [t0, t0 + 10], [0, 1], cl);
+              const vis = t0 <= ENTRADA_JUNTO_COM_TRANSICAO ? 1 : interpolate(f, [t0, t0 + 10], [0, 1], cl);
               return (
                 <div key={k} style={{ position: "absolute", left: x, top: y, transform: `translate(-50%,-50%) scale(${0.4 + 0.6 * vis})`, opacity: vis, filter: vis < 1 ? `blur(${(1 - vis) * 12}px)` : undefined }}>
                   <Icone3D nome={it.nome} variante={it.variante} tamanho={v.centro ? 170 : 200} />
