@@ -35,7 +35,6 @@ const borrao = (eixo: "x" | "y", intensidade: number) => {
 /** Estado visual de uma transição: p=0 cena parada, p=1 cena fora da tela. sentido: -1 entrando, +1 saindo. */
 function estilo(tipo: Transicao, p: number, sentido: 1 | -1): React.CSSProperties {
   // Transições macias: a cena se dissolve na outra, sem "soco" de escala no final.
-  if (p <= 0) return {};
   const fade = { opacity: 1 - p };
   switch (tipo) {
     case "zoom": {
@@ -53,15 +52,18 @@ function estilo(tipo: Transicao, p: number, sentido: 1 | -1): React.CSSPropertie
 
 /** Movimento contínuo da câmera durante a cena (variado por cena). */
 function movimento(indice: number, q: number): string {
+  return `perspective(1400px) ${movimentoBase(indice, q)}`;
+}
+function movimentoBase(indice: number, q: number): string {
   switch (indice % 4) {
     case 0:
-      return `scale(${1 + q * 0.1}) rotateX(${5 - q * 5}deg)`;
+      return `scale(${1 + q * 0.2}) rotateX(${6 - q * 8}deg)`;
     case 1:
-      return `rotateY(${8 - q * 14}deg) scale(${1.0 + q * 0.06})`;
+      return `rotateY(${12 - q * 24}deg) scale(${1.02 + q * 0.14})`;
     case 2:
-      return `translateY(${36 - q * 72}px) rotateX(${-6 + q * 10}deg) scale(1.02)`;
+      return `translateY(${60 - q * 120}px) rotateX(${-8 + q * 14}deg) scale(${1.04 + q * 0.1})`;
     default:
-      return `rotateZ(${-2 + q * 4}deg) scale(${1.08 - q * 0.08})`;
+      return `rotateZ(${-3 + q * 6}deg) scale(${1.18 - q * 0.16})`;
   }
 }
 
@@ -93,10 +95,12 @@ export const Camera: React.FC<{
   const suaviza = Easing.inOut(Easing.sin);
   const pIn = entrada ? interpolate(f, [0, TRANSICAO], [1, 0], { ...cl, easing: suaviza }) : 0;
   const pOut = saida ? interpolate(f, [duracao, duracao + TRANSICAO], [0, 1], { ...cl, easing: suaviza }) : 0;
-  const t = pOut > 0 ? estilo(saida!, pOut, 1) : estilo(entrada ?? "zoom", pIn, -1);
+  const bruto = pOut > 0 ? estilo(saida!, pOut, 1) : estilo(entrada ?? "zoom", pIn, -1);
+  // filtro sempre ligado (em zero quando não usado): ligar/desligar filtro muda a composição e dá um "pulo"
+  const t: React.CSSProperties = { ...bruto, filter: bruto.filter && bruto.filter !== "" ? bruto.filter : "blur(0px)" };
   return (
-    <AbsoluteFill style={{ perspective: 1400, perspectiveOrigin: "50% 38%" }}>
-      <AbsoluteFill style={{ ...t, transformOrigin: "50% 36%", transformStyle: "preserve-3d" }}>
+    <AbsoluteFill>
+      <AbsoluteFill style={{ ...t, transformOrigin: "50% 36%" }}>
         <AbsoluteFill style={{ transform: suave ? `scale(${1 + q * 0.04})` : movimento(indice, q), transformOrigin: "50% 36%" }}>
           {children}
         </AbsoluteFill>

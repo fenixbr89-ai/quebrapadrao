@@ -12,6 +12,7 @@
 > - Vários elementos da mesma frase → **órbita** (`"orbita": true`, opcional `"centro"`): um entra e começa a girar, o próximo vai atrás em círculo.
 > - Fotos com zoom lento contínuo; Terra/planeta pode `"girar": true`; ícones flutuam e balançam em 3D.
 > - Entradas lisas, **sem mola**, e **sem "soco" de escala na saída**: transição = dissolve com leve desfoque (escala ≤ 12%), câmera em velocidade constante (nunca para antes da troca). Isso eliminava a "batidinha" que o dono reclamou. Conferir medindo largura/posição quadro a quadro, não só a olho.
+> - **Causa real da batidinha (2026-11-25):** filtro de desfoque ligando/desligando no fim/início da transição fazia o 3D da câmera "pular". Regra: perspectiva dentro do transform do movimento (`perspective(1400px) ...`), sem `preserve-3d`, e filtro sempre presente (`blur(0px)` quando parado). Movimento dentro da cena forte e contínuo (nunca parece parado). Teste: `scratchpad/difs.py` (diferença entre quadros) não pode ter degraus bruscos.
 
 **Padrão fixo desde 2026-11-23: o estilo do vídeo do café** (`referencias/cafe-prancha.jpg`; código em `src/`, exemplo em `videos/2026-11-23-brasil-nao-tinha-cafe/roteiro.json`). Ele segue a estrutura e o ritmo do **vídeo do Titanic** (`referencias/titanic-prancha.jpg` e `referencias/titanic/quadro-NN.jpg`, um quadro a cada 2 s).
 Wizebot e Cervello (`referencias/movimento-*`) são só referência de **técnica de movimento** — nunca copiar marca, logo ou a paleta azul/verde.

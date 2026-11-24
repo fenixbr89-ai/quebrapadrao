@@ -57,7 +57,7 @@ const Entra: React.FC<{ x: number; y: number; atraso?: number; children: React.R
         top: y,
         transform: `translate(-50%,-50%) perspective(1600px) rotateY(${(1 - s) * 18 + rot}deg) scale(${de + (1 - de) * s})`,
         opacity: Math.min(1, s * 1.4),
-        filter: blur > 0.3 ? `blur(${blur}px)` : undefined,
+        filter: `blur(${blur}px)`,
       }}
     >
       {children}
@@ -114,7 +114,7 @@ export const Visual: React.FC<{ v: V; slug: string; roteiro: Roteiro }> = ({ v, 
                 <Img src={staticFile(`${slug}/${v.imagem}`)} style={{ width: "100%", height: "100%", objectFit: "cover", transform: `rotate(${f * 1.2}deg) scale(1.08)` }} />
               </div>
             ) : (
-              <FotoMoldura src={`${slug}/${v.imagem}`} largura={760} altura={560} legenda={v.legenda} pb={v.pb ?? false} zoom={interpolate(f, [0, d], [1, 1.14])} />
+              <FotoMoldura src={`${slug}/${v.imagem}`} largura={760} altura={560} legenda={v.legenda} pb={v.pb ?? false} zoom={interpolate(f, [0, d], [1, 1.25])} />
             )}
           </Entra>
           {(v.alertas ?? []).map((n, k) => {
