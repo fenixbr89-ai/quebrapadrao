@@ -5,7 +5,8 @@ import type { VideoProps } from "./tipos";
 import { calcularCenas, estimarTiming, FPS } from "./timing";
 import { Fundo } from "./componentes/Fundo";
 import { Legenda } from "./componentes/Legenda";
-import { Visual } from "./cenas/Visual";
+import { Visual, TemposCena } from "./cenas/Visual";
+import { normalizar } from "./timing";
 import { FotosIcones } from "./componentes/Icone3D";
 import { Camera, FiltrosMovimento, TRANSICAO, transicaoDe } from "./componentes/Camera";
 import "./componentes/fonte";
@@ -49,7 +50,15 @@ export const Video: React.FC<VideoProps> = ({ roteiro, timing, audio }) => {
               saida={ultima ? null : transicaoDe(i)}
               suave={fixa}
             >
-              <Visual v={c.visual} slug={roteiro.slug} roteiro={roteiro} />
+              <TemposCena.Provider
+                value={t.palavras.slice(cenas[i].palavraInicio, cenas[i].palavraFim).map((p) => ({
+                  norm: normalizar(p.palavra).replace(/[^a-z0-9]/g, ""),
+                  raw: p.palavra.toLowerCase(),
+                  frame: Math.round(p.inicio * fps) - (cenas[i].inicioFrame - (i > 0 ? MEIO : 0)),
+                }))}
+              >
+                <Visual v={c.visual} slug={roteiro.slug} roteiro={roteiro} />
+              </TemposCena.Provider>
             </Camera>
           </Sequence>
         );

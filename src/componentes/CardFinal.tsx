@@ -5,7 +5,7 @@ import { FONTE } from "./fonte";
 export const Balao: React.FC<{ pergunta: string; y: number }> = ({ pergunta, y }) => {
   const f = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const s = spring({ frame: f, fps, config: { damping: 14 } });
+  const s = spring({ frame: f, fps, config: { damping: 200 }, durationInFrames: 16 });
   return (
     <div
       style={{
@@ -38,7 +38,7 @@ export const Balao: React.FC<{ pergunta: string; y: number }> = ({ pergunta, y }
 export const CardSeguir: React.FC<{ y: number }> = ({ y }) => {
   const f = useCurrentFrame();
   const { fps, durationInFrames } = useVideoConfig();
-  const s = spring({ frame: f, fps, config: { damping: 15 } });
+  const s = spring({ frame: f, fps, config: { damping: 200 }, durationInFrames: 16 });
   const clique = Math.min(durationInFrames - 10, 40);
   const seguindo = f >= clique;
   const aperto = interpolate(f, [clique - 4, clique, clique + 5], [1, 0.92, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });

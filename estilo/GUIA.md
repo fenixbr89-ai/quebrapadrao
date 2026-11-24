@@ -6,6 +6,12 @@
 > - Todo **ser vivo ou objeto real** (boi, café, cavalo, chuveiro, Sol, relógio...) = **foto colorida dentro do ícone 3D** (`fotosIcones`). Desenho só para símbolo abstrato (alerta, X, setas, raio, fio terra) ou quando não houver foto livre.
 > - Fundo preto, legenda karaokê, vermelho #E53935 nos 2–3 momentos fortes, câmera/transições e logo continuam iguais.
 > - Onde este guia ainda disser "P&B", vale a regra acima.
+>
+> **DINAMISMO (dono, 2026-11-25): nada parado, tudo de acordo com a legenda.**
+> - Cada elemento entra **na palavra em que é falado** (`palavra` nos itens; `alertasPalavra`, `marcaPalavra`; contador/velocímetro começam na sua `palavra`).
+> - Vários elementos da mesma frase → **órbita** (`"orbita": true`, opcional `"centro"`): um entra e começa a girar, o próximo vai atrás em círculo.
+> - Fotos com zoom lento contínuo; Terra/planeta pode `"girar": true`; ícones flutuam e balançam em 3D.
+> - Entradas lisas, **sem mola** (a mola dava "batidinha").
 
 **Padrão fixo desde 2026-11-23: o estilo do vídeo do café** (`referencias/cafe-prancha.jpg`; código em `src/`, exemplo em `videos/2026-11-23-brasil-nao-tinha-cafe/roteiro.json`). Ele segue a estrutura e o ritmo do **vídeo do Titanic** (`referencias/titanic-prancha.jpg` e `referencias/titanic/quadro-NN.jpg`, um quadro a cada 2 s).
 Wizebot e Cervello (`referencias/movimento-*`) são só referência de **técnica de movimento** — nunca copiar marca, logo ou a paleta azul/verde.

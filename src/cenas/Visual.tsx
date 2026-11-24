@@ -1,5 +1,5 @@
 import React from "react";
-import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig, Easing } from "remotion";
+import { AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame, useVideoConfig, Easing } from "remotion";
 import type { Roteiro, Visual as V } from "../tipos";
 import { Icone3D } from "../componentes/Icone3D";
 import { FotoMoldura } from "../componentes/FotoMoldura";
@@ -10,12 +10,28 @@ const CX = 540;
 const CY = 660;
 const cl = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 
-/** Entrada com mola + desfoque (simula motion blur) e leve deriva de câmera durante toda a cena. */
+/** Entrada lisa (sem mola: a mola passava do ponto e dava uma "batidinha") com desfoque de movimento. */
 const useEntrada = (atraso = 0) => {
   const f = useCurrentFrame();
-  const { fps } = useVideoConfig();
-  const s = spring({ frame: f - atraso, fps, config: { damping: 16, mass: 0.8 } });
-  return { s, blur: (1 - s) * 18, f };
+  const s = interpolate(f, [atraso, atraso + 14], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp", easing: Easing.bezier(0.22, 1, 0.36, 1) });
+  return { s, blur: (1 - s) * 16, f };
+};
+
+/** Quadro (relativo à cena) em que cada palavra da legenda é falada. */
+export type TempoPalavra = { norm: string; raw: string; frame: number };
+export const TemposCena = React.createContext<TempoPalavra[]>([]);
+const norm = (p: string) => p.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]/g, "");
+/** Quando a palavra é falada (um pouco antes, para o elemento já estar entrando); senão, o valor padrão. */
+const useQuando = () => {
+  const tempos = React.useContext(TemposCena);
+  return (palavra: string | undefined, padrao: number) => {
+    if (!palavra) return padrao;
+    const primeira = palavra.split(/\s+/)[0].toLowerCase();
+    const alvo = norm(primeira);
+    // 1º tenta a grafia exata com pontuação ("você," ≠ "Você"), depois só as letras
+    const t = tempos.find((x) => x.raw === primeira) ?? tempos.find((x) => x.norm === alvo) ?? tempos.find((x) => x.norm.startsWith(alvo));
+    return t ? Math.max(0, t.frame - 4) : padrao;
+  };
 };
 
 const Entra: React.FC<{ x: number; y: number; atraso?: number; children: React.ReactNode; de?: number; rot?: number }> = ({
@@ -77,26 +93,34 @@ const MarcaX: React.FC<{ tamanho: number }> = ({ tamanho }) => <Icone3D nome="x"
 export const Visual: React.FC<{ v: V; slug: string; roteiro: Roteiro }> = ({ v, slug, roteiro }) => {
   const f = useCurrentFrame();
   const { durationInFrames: d } = useVideoConfig();
+  const quando = useQuando();
 
   let conteudo: React.ReactNode = null;
   switch (v.tipo) {
     case "foto": {
+      const tAlerta = quando(v.alertasPalavra, 8);
       conteudo = (
         <>
           {v.satelites ? <Satelites nomes={v.satelites} /> : null}
           <Entra x={CX} y={CY}>
-            <FotoMoldura src={`${slug}/${v.imagem}`} largura={760} altura={560} legenda={v.legenda} pb={v.pb ?? false} />
+            {v.girar ? (
+              <div style={{ width: 600, height: 600, borderRadius: 300, overflow: "hidden", boxShadow: "0 0 80px rgba(120,170,255,0.25), 0 40px 80px rgba(0,0,0,0.7)" }}>
+                <Img src={staticFile(`${slug}/${v.imagem}`)} style={{ width: "100%", height: "100%", objectFit: "cover", transform: `rotate(${f * 1.2}deg) scale(1.08)` }} />
+              </div>
+            ) : (
+              <FotoMoldura src={`${slug}/${v.imagem}`} largura={760} altura={560} legenda={v.legenda} pb={v.pb ?? false} zoom={interpolate(f, [0, d], [1, 1.14])} />
+            )}
           </Entra>
-          {(v.alertas ?? []).map((n, i) => {
+          {(v.alertas ?? []).map((n, k) => {
             const pos = [
               [180, 420],
               [900, 470],
               [160, 860],
               [920, 900],
               [540, 330],
-            ][i % 5];
+            ][k % 5];
             return (
-              <Entra key={i} x={pos[0]} y={pos[1]} atraso={8 + i * 5} de={0.3}>
+              <Entra key={k} x={pos[0]} y={pos[1] + Math.sin((f + k * 15) / 10) * 8} atraso={tAlerta + k * 4} de={0.3}>
                 <Icone3D nome={n} variante="vermelho" tamanho={120} />
               </Entra>
             );
@@ -109,11 +133,13 @@ export const Visual: React.FC<{ v: V; slug: string; roteiro: Roteiro }> = ({ v, 
       conteudo = (
         <>
           {v.satelites ? <Satelites nomes={v.satelites} /> : null}
-          <Entra x={CX} y={CY}>
-            <Icone3D nome={v.nome} variante={v.variante} tamanho={300} />
+          <Entra x={CX} y={CY + Math.sin(f / 14) * 14}>
+            <div style={{ transform: `perspective(900px) rotateY(${v.girar ? f * 4 : Math.sin(f / 18) * 14}deg) rotateZ(${Math.sin(f / 23) * 4}deg)` }}>
+              <Icone3D nome={v.nome} variante={v.variante} tamanho={300} />
+            </div>
           </Entra>
           {v.marca ? (
-            <Entra x={CX + 130} y={CY + 120} atraso={10} de={0.2}>
+            <Entra x={CX + 130} y={CY + 120} atraso={quando(v.marcaPalavra, 10)} de={0.2}>
               <MarcaX tamanho={120} />
             </Entra>
           ) : null}
@@ -128,16 +154,52 @@ export const Visual: React.FC<{ v: V; slug: string; roteiro: Roteiro }> = ({ v, 
     }
     case "icones": {
       const n = v.itens.length;
-      const gap = 330;
-      conteudo = v.itens.map((it, i) => {
-        const x = CX + (i - (n - 1) / 2) * gap;
+      const entradas = v.itens.map((it, k) => quando(it.palavra, k * 7));
+      if (v.orbita) {
+        // um entra e começa a girar; o próximo entra no mesmo ponto e vai atrás dele, em círculo
+        const R = v.centro ? 330 : 280;
+        const volta = 75; // quadros por volta
+        conteudo = (
+          <>
+            <svg width={1080} height={1300} style={{ position: "absolute", left: 0, top: 0 }}>
+              <circle cx={CX} cy={CY} r={R} fill="none" stroke="#ffffff" strokeOpacity={0.18} strokeWidth={3} strokeDasharray="4 14" />
+            </svg>
+            {v.centro ? (
+              <Entra x={CX} y={CY}>
+                <div style={{ transform: `rotate(${f * 0.6}deg)` }}>
+                  <Icone3D nome={v.centro} tamanho={260} />
+                </div>
+              </Entra>
+            ) : null}
+            {v.itens.map((it, k) => {
+              const t0 = entradas[k];
+              const ang = -Math.PI / 2 + Math.max(0, f - t0) * ((2 * Math.PI) / volta) - (v.centro ? 0 : 0);
+              const x = CX + Math.cos(ang) * R;
+              const y = CY + Math.sin(ang) * R;
+              const vis = interpolate(f, [t0, t0 + 10], [0, 1], cl);
+              return (
+                <div key={k} style={{ position: "absolute", left: x, top: y, transform: `translate(-50%,-50%) scale(${0.4 + 0.6 * vis})`, opacity: vis, filter: vis < 1 ? `blur(${(1 - vis) * 12}px)` : undefined }}>
+                  <Icone3D nome={it.nome} variante={it.variante} tamanho={v.centro ? 170 : 200} />
+                </div>
+              );
+            })}
+          </>
+        );
+        break;
+      }
+      const gap = n > 2 ? 300 : 330;
+      conteudo = v.itens.map((it, k) => {
+        const x = CX + (k - (n - 1) / 2) * gap;
+        const y = CY + Math.sin((f + k * 12) / 12) * 16;
         return (
-          <React.Fragment key={i}>
-            <Entra x={x} y={CY} atraso={i * 7}>
-              <Icone3D nome={it.nome} variante={it.variante} tamanho={240} />
+          <React.Fragment key={k}>
+            <Entra x={x} y={y} atraso={entradas[k]}>
+              <div style={{ transform: `perspective(900px) rotateY(${Math.sin((f + k * 20) / 16) * 16}deg)` }}>
+                <Icone3D nome={it.nome} variante={it.variante} tamanho={n > 2 ? 220 : 240} />
+              </div>
             </Entra>
             {it.marca ? (
-              <Entra x={x + 95} y={CY + 95} atraso={i * 7 + 10} de={0.2}>
+              <Entra x={x + 95} y={y + 95} atraso={entradas[k] + 10} de={0.2}>
                 <MarcaX tamanho={100} />
               </Entra>
             ) : null}
@@ -170,7 +232,8 @@ export const Visual: React.FC<{ v: V; slug: string; roteiro: Roteiro }> = ({ v, 
     }
     case "contador": {
       // número grande sem anel (dono não gostou do círculo): ícone acima, número, linha e rótulo
-      const p = interpolate(f, [2, Math.min(28, d * 0.6)], [0, 1], { ...cl, easing: Easing.out(Easing.cubic) });
+      const t0c = quando(v.palavra, 2);
+      const p = interpolate(f, [t0c, t0c + 26], [0, 1], { ...cl, easing: Easing.out(Easing.cubic) });
       const valor = Math.round(v.de + (v.para - v.de) * p);
       const texto = (v.para >= 10000 || v.sufixo !== undefined ? valor.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") : String(valor)) + (v.sufixo ?? "");
       const linha = interpolate(f, [6, 22], [0, 1], { ...cl, easing: Easing.out(Easing.cubic) });
@@ -279,7 +342,7 @@ export const Visual: React.FC<{ v: V; slug: string; roteiro: Roteiro }> = ({ v, 
             const a = (i / n) * Math.PI * 2 - Math.PI / 2 + f / 200;
             const r = 360;
             return (
-              <Entra key={i} x={CX + Math.cos(a) * r} y={CY + Math.sin(a) * r * 0.95} atraso={4 + i * 3} de={0.3}>
+              <Entra key={i} x={CX + Math.cos(a) * r} y={CY + Math.sin(a) * r * 0.95} atraso={quando(it.palavra, 4 + i * 3)} de={0.3}>
                 <Icone3D nome={it.nome} variante={it.variante} tamanho={130} />
               </Entra>
             );
@@ -294,7 +357,8 @@ export const Visual: React.FC<{ v: V; slug: string; roteiro: Roteiro }> = ({ v, 
 
     case "velocimetro": {
       // velocímetro em linha (igual Titanic): arco cinza, arco ativo branco→vermelho, ponteiro subindo
-      const p = interpolate(f, [3, Math.min(30, d * 0.6)], [0, 1], { ...cl, easing: Easing.out(Easing.cubic) });
+      const t0v = quando(v.palavra, 3);
+      const p = interpolate(f, [t0v, t0v + 28], [0, 1], { ...cl, easing: Easing.out(Easing.cubic) });
       const valor = Math.round(v.valor * p);
       const R = 270;
       const cy = CY + 60;

@@ -1,12 +1,13 @@
 import React from "react";
 import { Img, staticFile } from "remotion";
 
-export const FotoMoldura: React.FC<{ src: string; largura: number; altura: number; pb?: boolean; legenda?: string }> = ({
+export const FotoMoldura: React.FC<{ src: string; largura: number; altura: number; pb?: boolean; legenda?: string; zoom?: number }> = ({
   src,
   largura,
   altura,
   pb = false,
   legenda,
+  zoom = 1,
 }) => (
   <div
     style={{
@@ -20,7 +21,7 @@ export const FotoMoldura: React.FC<{ src: string; largura: number; altura: numbe
       background: "#111",
     }}
   >
-    <Img src={staticFile(src)} style={{ width: "100%", height: "100%", objectFit: "cover", filter: pb ? "grayscale(1) contrast(1.08)" : undefined }} />
+    <Img src={staticFile(src)} style={{ width: "100%", height: "100%", objectFit: "cover", transform: `scale(${zoom})`, filter: pb ? "grayscale(1) contrast(1.08)" : undefined }} />
     {legenda ? (
       <div
         style={{

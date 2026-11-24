@@ -3,19 +3,19 @@ export type Destaque = { palavra: string; cor: Cor };
 
 /** Descrição do que aparece na tela em cada cena. */
 export type Visual =
-  | { tipo: "foto"; imagem: string; pb?: boolean; legenda?: string; satelites?: string[]; alertas?: string[] }
-  | { tipo: "icone"; nome: string; variante?: Cor; rotulo?: string; satelites?: string[]; marca?: "x" }
-  | { tipo: "icones"; itens: { nome: string; variante?: Cor; marca?: "x" }[] }
+  | { tipo: "foto"; imagem: string; pb?: boolean; legenda?: string; satelites?: string[]; alertas?: string[]; alertasPalavra?: string; girar?: boolean }
+  | { tipo: "icone"; nome: string; variante?: Cor; rotulo?: string; satelites?: string[]; marca?: "x"; marcaPalavra?: string; girar?: boolean }
+  | { tipo: "icones"; itens: { nome: string; variante?: Cor; marca?: "x"; palavra?: string }[]; orbita?: boolean; centro?: string }
   | { tipo: "navio"; carga?: string[]; variante?: Cor }
-  | { tipo: "contador"; de: number; para: number; nome: string; rotulo?: string; sufixo?: string }
-  | { tipo: "velocimetro"; valor: number; max: number; unidade?: string; vermelho?: boolean; imagem?: string }
+  | { tipo: "contador"; de: number; para: number; nome: string; rotulo?: string; sufixo?: string; palavra?: string }
+  | { tipo: "velocimetro"; valor: number; max: number; unidade?: string; vermelho?: boolean; imagem?: string; palavra?: string }
   | { tipo: "jato"; gotas: boolean; raio?: boolean }
   | { tipo: "vento"; itens: string[] }
   | { tipo: "planeta"; modo: "girando" | "polos" | "parado"; rotulo?: string }
   | { tipo: "rota"; de: string; para: string; nome: string }
   | { tipo: "troca"; esquerda: string; direita: string; vai: string[]; volta: string[] }
   | { tipo: "grade"; total: number; vermelhos: number; nome: string }
-  | { tipo: "recap"; centro: string; itens: { nome: string; variante?: Cor }[] }
+  | { tipo: "recap"; centro: string; itens: { nome: string; variante?: Cor; palavra?: string }[] }
   | { tipo: "balao" }
   | { tipo: "final" };
 

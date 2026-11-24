@@ -296,6 +296,7 @@ export const glifos: Record<string, G[]> = {
   lua: [Lua],
   seta: [Seta],
   polos: [Polos],
+  sofa: [Prato],
   cafe: [Cafe],
   boi: [Boi, BoiDetalhe],
   cana: [Cana, CanaNos],

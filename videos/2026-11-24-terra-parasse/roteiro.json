@@ -12,7 +12,8 @@
     "furacao": "imagens/furacao.jpg",
     "som": "imagens/jato.jpg|45% 55%",
     "onda": "imagens/oceano.jpg",
-    "pessoa": "imagens/pessoa.jpg|55% 60%"
+    "pessoa": "imagens/pessoa.jpg|55% 60%",
+    "sofa": "imagens/sofa.jpg|50% 70%"
   },
   "cenas": [
     {
@@ -28,7 +29,8 @@
         "tipo": "velocimetro",
         "valor": 1500,
         "max": 2000,
-        "vermelho": true
+        "vermelho": true,
+        "palavra": "1.500"
       }
     },
     {
@@ -42,11 +44,11 @@
       ],
       "visual": {
         "tipo": "foto",
-        "imagem": "imagens/terra.jpg",
-        "legenda": "A Terra vista do espaço",
+        "imagem": "imagens/icones/terra.jpg",
+        "girar": true,
         "satelites": [
-          "globo",
-          "vento"
+          "sol",
+          "lua"
         ]
       }
     },
@@ -80,15 +82,20 @@
       ],
       "visual": {
         "tipo": "icones",
+        "orbita": true,
+        "centro": "globo",
         "itens": [
           {
-            "nome": "pessoa"
+            "nome": "pessoa",
+            "palavra": "você,"
           },
           {
-            "nome": "globo"
+            "nome": "sofa",
+            "palavra": "chão"
           },
           {
-            "nome": "vento"
+            "nome": "vento",
+            "palavra": "ar."
           }
         ]
       }
@@ -175,12 +182,11 @@
         }
       ],
       "visual": {
-        "tipo": "foto",
-        "imagem": "imagens/vento.jpg",
-        "satelites": [
-          "vento",
-          "furacao"
-        ]
+        "tipo": "velocimetro",
+        "valor": 1500,
+        "max": 2000,
+        "palavra": "1.500",
+        "imagem": "imagens/vento.jpg"
       }
     },
     {
@@ -201,7 +207,8 @@
           "vento",
           "vento",
           "vento"
-        ]
+        ],
+        "alertasPalavra": "quatro"
       }
     },
     {
@@ -251,7 +258,8 @@
         "de": 1,
         "para": 365,
         "nome": "relogio",
-        "rotulo": "DIAS EM UM DIA"
+        "rotulo": "DIAS EM UM DIA",
+        "palavra": "ano"
       }
     },
     {
@@ -271,10 +279,12 @@
         "tipo": "icones",
         "itens": [
           {
-            "nome": "sol"
+            "nome": "sol",
+            "palavra": "sol."
           },
           {
-            "nome": "lua"
+            "nome": "lua",
+            "palavra": "noite."
           }
         ]
       }
@@ -290,8 +300,12 @@
       ],
       "visual": {
         "tipo": "foto",
-        "imagem": "imagens/terra.jpg",
-        "legenda": "Terra vista da Apollo 17, 1972"
+        "imagem": "imagens/icones/terra.jpg",
+        "girar": true,
+        "satelites": [
+          "globo",
+          "lua"
+        ]
       }
     },
     {
@@ -305,12 +319,12 @@
       ],
       "visual": {
         "tipo": "icones",
+        "orbita": true,
+        "centro": "globo",
         "itens": [
           {
-            "nome": "globo"
-          },
-          {
-            "nome": "lua"
+            "nome": "lua",
+            "palavra": "Lua."
           }
         ]
       }
@@ -330,7 +344,8 @@
         "para": 2,
         "nome": "relogio",
         "rotulo": "A CADA SÉCULO",
-        "sufixo": " ms"
+        "sufixo": " ms",
+        "palavra": "2"
       }
     },
     {
