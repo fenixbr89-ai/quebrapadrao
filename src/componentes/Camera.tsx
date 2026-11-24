@@ -34,18 +34,20 @@ const borrao = (eixo: "x" | "y", intensidade: number) => {
 
 /** Estado visual de uma transição: p=0 cena parada, p=1 cena fora da tela. sentido: -1 entrando, +1 saindo. */
 function estilo(tipo: Transicao, p: number, sentido: 1 | -1): React.CSSProperties {
+  // Transições macias: a cena se dissolve na outra, sem "soco" de escala no final.
   if (p <= 0) return {};
+  const fade = { opacity: 1 - p };
   switch (tipo) {
     case "zoom": {
-      const escala = sentido === 1 ? 1 + p * 0.9 : 1 - p * 0.3;
-      return { transform: `scale(${escala})`, filter: `blur(${p * 16}px)`, opacity: 1 - p };
+      const escala = sentido === 1 ? 1 + p * 0.12 : 1 - p * 0.08;
+      return { transform: `scale(${escala})`, filter: `blur(${p * 14}px)`, ...fade };
     }
     case "chicoteX":
-      return { transform: `translateX(${-sentido * p * 700}px)`, filter: borrao("x", p * 1.2), opacity: 1 - p };
+      return { transform: `translateX(${-sentido * p * 260}px)`, filter: borrao("x", p), ...fade };
     case "chicoteY":
-      return { transform: `translateY(${-sentido * p * 900}px)`, filter: borrao("y", p * 1.2), opacity: 1 - p };
+      return { transform: `translateY(${-sentido * p * 320}px)`, filter: borrao("y", p), ...fade };
     case "giro":
-      return { transform: `rotateY(${sentido * p * 45}deg) scale(${1 - p * 0.12})`, filter: `blur(${p * 10}px)`, opacity: 1 - p };
+      return { transform: `rotateY(${sentido * p * 22}deg)`, filter: `blur(${p * 10}px)`, ...fade };
   }
 }
 
@@ -87,8 +89,8 @@ export const Camera: React.FC<{
   children: React.ReactNode;
 }> = ({ indice, duracao, entrada, saida, primeiroPlano, suave, children }) => {
   const f = useCurrentFrame();
-  const q = interpolate(f, [0, duracao + TRANSICAO], [0, 1], { ...cl, easing: Easing.inOut(Easing.sin) });
-  const suaviza = Easing.bezier(0.45, 0, 0.25, 1);
+  const q = interpolate(f, [0, duracao + TRANSICAO], [0, 1], cl); // linear: nunca "para" antes da troca
+  const suaviza = Easing.inOut(Easing.sin);
   const pIn = entrada ? interpolate(f, [0, TRANSICAO], [1, 0], { ...cl, easing: suaviza }) : 0;
   const pOut = saida ? interpolate(f, [duracao, duracao + TRANSICAO], [0, 1], { ...cl, easing: suaviza }) : 0;
   const t = pOut > 0 ? estilo(saida!, pOut, 1) : estilo(entrada ?? "zoom", pIn, -1);
