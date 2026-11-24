@@ -8,6 +8,7 @@ export type Visual =
   | { tipo: "icones"; itens: { nome: string; variante?: Cor; marca?: "x" }[] }
   | { tipo: "navio"; carga?: string[]; variante?: Cor }
   | { tipo: "contador"; de: number; para: number; nome: string; rotulo?: string; sufixo?: string }
+  | { tipo: "velocimetro"; valor: number; max: number; unidade?: string; vermelho?: boolean; imagem?: string }
   | { tipo: "jato"; gotas: boolean; raio?: boolean }
   | { tipo: "vento"; itens: string[] }
   | { tipo: "planeta"; modo: "girando" | "polos" | "parado"; rotulo?: string }

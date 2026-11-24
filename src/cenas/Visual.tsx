@@ -169,34 +169,19 @@ export const Visual: React.FC<{ v: V; slug: string; roteiro: Roteiro }> = ({ v, 
       break;
     }
     case "contador": {
+      // número grande sem anel (dono não gostou do círculo): ícone acima, número, linha e rótulo
       const p = interpolate(f, [2, Math.min(28, d * 0.6)], [0, 1], { ...cl, easing: Easing.out(Easing.cubic) });
       const valor = Math.round(v.de + (v.para - v.de) * p);
       const texto = (v.para >= 10000 || v.sufixo !== undefined ? valor.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") : String(valor)) + (v.sufixo ?? "");
-      const r = 260;
-      const circ = 2 * Math.PI * r;
+      const linha = interpolate(f, [6, 22], [0, 1], { ...cl, easing: Easing.out(Easing.cubic) });
       conteudo = (
         <>
-          <svg width={1080} height={1300} style={{ position: "absolute", left: 0, top: 0 }}>
-            <circle cx={CX} cy={CY} r={r} stroke="#262626" strokeWidth={22} fill="none" />
-            <circle
-              cx={CX}
-              cy={CY}
-              r={r}
-              stroke="#ffffff"
-              strokeWidth={22}
-              fill="none"
-              strokeDasharray={circ}
-              strokeDashoffset={circ * (1 - p)}
-              strokeLinecap="round"
-              transform={`rotate(-90 ${CX} ${CY})`}
-            />
-            <circle cx={CX} cy={CY} r={r + 60} stroke="#1a1a1a" strokeWidth={2} fill="none" />
-          </svg>
-          <Rotulo texto={texto} y={CY + 10} tam={texto.length >= 5 ? 140 : 190} cor="#ffffff" />
-          {v.rotulo ? <Rotulo texto={v.rotulo} y={CY + 130} tam={34} cor="#8a8a8a" /> : null}
-          <Entra x={CX} y={CY - 190} atraso={2} de={0.4}>
-            <Icone3D nome={v.nome} tamanho={130} />
+          <Entra x={CX} y={CY - 250} atraso={2} de={0.4}>
+            <Icone3D nome={v.nome} tamanho={150} />
           </Entra>
+          <Rotulo texto={texto} y={CY + 10} tam={texto.length >= 5 ? 190 : 240} cor="#ffffff" />
+          <div style={{ position: "absolute", left: CX - 220 * linha, top: CY + 150, width: 440 * linha, height: 4, borderRadius: 2, background: "#5a5a5a" }} />
+          {v.rotulo ? <Rotulo texto={v.rotulo} y={CY + 210} tam={36} cor="#9a9a9a" /> : null}
         </>
       );
       break;
@@ -307,6 +292,48 @@ export const Visual: React.FC<{ v: V; slug: string; roteiro: Roteiro }> = ({ v, 
       break;
     }
 
+    case "velocimetro": {
+      // velocímetro em linha (igual Titanic): arco cinza, arco ativo branco→vermelho, ponteiro subindo
+      const p = interpolate(f, [3, Math.min(30, d * 0.6)], [0, 1], { ...cl, easing: Easing.out(Easing.cubic) });
+      const valor = Math.round(v.valor * p);
+      const R = 270;
+      const cy = CY + 60;
+      const ang = (t: number) => Math.PI + t * Math.PI; // 180° → 360°
+      const pt = (t: number, r: number) => [CX + Math.cos(ang(t)) * r, cy + Math.sin(ang(t)) * r];
+      const arco = (t0: number, t1: number, r: number) => {
+        const [x0, y0] = pt(t0, r);
+        const [x1, y1] = pt(t1, r);
+        return `M${x0} ${y0} A ${r} ${r} 0 0 1 ${x1} ${y1}`;
+      };
+      const frac = Math.min(1, (v.valor / v.max) * p);
+      const [nx, ny] = pt(frac, R - 40);
+      const cor = v.vermelho && p > 0.6 ? "#E53935" : "#ffffff";
+      const fmt = valor.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+      conteudo = (
+        <>
+          {v.imagem ? (
+            <div style={{ position: "absolute", left: CX, top: cy - R - 150, transform: "translate(-50%,-50%)", opacity: 0.9 }}>
+              <FotoMoldura src={`${slug}/${v.imagem}`} largura={300} altura={200} />
+            </div>
+          ) : null}
+          <svg width={1080} height={1300} style={{ position: "absolute", left: 0, top: 0 }}>
+            <circle cx={CX} cy={cy} r={R + 40} fill="#141414" stroke="#262626" strokeWidth={3} />
+            <path d={arco(0, 1, R)} stroke="#3a3a3a" strokeWidth={26} fill="none" strokeLinecap="round" />
+            {frac > 0.001 ? <path d={arco(0, frac, R)} stroke={cor} strokeWidth={26} fill="none" strokeLinecap="round" /> : null}
+            {Array.from({ length: 11 }).map((_, k) => {
+              const [x0, y0] = pt(k / 10, R - 34);
+              const [x1, y1] = pt(k / 10, R - (k % 5 === 0 ? 70 : 54));
+              return <line key={k} x1={x0} y1={y0} x2={x1} y2={y1} stroke="#6a6a6a" strokeWidth={4} strokeLinecap="round" />;
+            })}
+            <line x1={CX} y1={cy} x2={nx} y2={ny} stroke="#ffffff" strokeWidth={12} strokeLinecap="round" />
+            <circle cx={CX} cy={cy} r={22} fill="#ffffff" />
+          </svg>
+          <Rotulo texto={fmt} y={cy + 120} tam={110} cor={cor} />
+          <Rotulo texto={v.unidade ?? "KM/H"} y={cy + 200} tam={34} cor="#8a8a8a" />
+        </>
+      );
+      break;
+    }
     case "jato": {
       // chuveiro no alto; abaixo o jato: contínuo ou quebrado em gotas (com ar entre elas)
       const topo = 360;

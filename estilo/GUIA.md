@@ -19,6 +19,8 @@ Wizebot e Cervello (`referencias/movimento-*`) são só referência de **técnic
 - A legenda mostra só o trecho da frase atual, não o texto todo.
 
 ## Elementos visuais
+- **Fotos reais em moldura em boa parte das cenas, igual ao Titanic** (dono, 2026-11-24): não só dentro dos ícones. Momento de perigo = foto + ícones vermelhos em volta.
+- **Velocidade = velocímetro em linha** (tipo `velocimetro`), como no Titanic. **Números = número grande sem anel** (o dono não gostou do círculo em volta do número).
 - **Fotos reais** (P&B quando históricas) em molduras arredondadas (raio ~18 px, borda escura grossa, sombra), flutuando com leve movimento/zoom. Ex.: navio, iceberg, capitão, navio vizinho, bote.
 - **Ícones 3D** estilo "app icon": azulejo arredondado com volume (brilho no topo, sombra embaixo), **branco** com símbolo escuro, ou **vermelho** com símbolo branco (alerta, cadeado). Pequenos ícones-satélite desfocados em volta do principal dão profundidade.
   - **Coisas reais = foto real P&B dentro do azulejo** (dono, 2026-11-23): café, cavalo, boi, tomate etc. viram foto livre em preto e branco recortada no ícone (`fotosIcones` no roteiro.json). Símbolos abstratos (alerta, X, setas, pessoa) continuam desenhados.

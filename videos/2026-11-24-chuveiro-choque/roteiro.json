@@ -13,8 +13,8 @@
         }
       ],
       "visual": {
-        "tipo": "icone",
-        "nome": "chuveiro",
+        "tipo": "foto",
+        "imagem": "imagens/chuveiro.jpg",
         "satelites": [
           "raio",
           "gota",
@@ -33,9 +33,14 @@
         }
       ],
       "visual": {
-        "tipo": "icone",
-        "nome": "raio",
-        "variante": "vermelho"
+        "tipo": "foto",
+        "imagem": "imagens/chuveiro.jpg",
+        "alertas": [
+          "raio",
+          "raio",
+          "raio",
+          "raio"
+        ]
       }
     },
     {
@@ -168,8 +173,12 @@
         }
       ],
       "visual": {
-        "tipo": "jato",
-        "gotas": true
+        "tipo": "foto",
+        "imagem": "imagens/gotas.jpg",
+        "satelites": [
+          "gota",
+          "gota"
+        ]
       }
     },
     {
@@ -231,9 +240,13 @@
         }
       ],
       "visual": {
-        "tipo": "icone",
-        "nome": "disjuntor",
-        "rotulo": "DISJUNTOR DR"
+        "tipo": "foto",
+        "imagem": "imagens/dr.jpg",
+        "legenda": "Disjuntor DR",
+        "satelites": [
+          "raio",
+          "disjuntor"
+        ]
       }
     },
     {
@@ -246,11 +259,11 @@
         }
       ],
       "visual": {
-        "tipo": "icone",
-        "nome": "registro",
+        "tipo": "foto",
+        "imagem": "imagens/fios.jpg",
         "satelites": [
-          "raio",
-          "gota"
+          "registro",
+          "raio"
         ]
       }
     },
@@ -264,10 +277,14 @@
         }
       ],
       "visual": {
-        "tipo": "icone",
-        "nome": "terra",
-        "variante": "vermelho",
-        "marca": "x"
+        "tipo": "foto",
+        "imagem": "imagens/fios.jpg",
+        "alertas": [
+          "terra",
+          "raio",
+          "terra",
+          "raio"
+        ]
       }
     },
     {
@@ -280,8 +297,12 @@
         }
       ],
       "visual": {
-        "tipo": "icone",
-        "nome": "ferramenta"
+        "tipo": "foto",
+        "imagem": "imagens/eletricista.jpg",
+        "satelites": [
+          "ferramenta",
+          "raio"
+        ]
       }
     },
     {

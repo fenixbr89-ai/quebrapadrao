@@ -17,12 +17,10 @@
         }
       ],
       "visual": {
-        "tipo": "contador",
-        "de": 0,
-        "para": 1500,
-        "nome": "globo",
-        "rotulo": "KM/H",
-        "sufixo": ""
+        "tipo": "velocimetro",
+        "valor": 1500,
+        "max": 2000,
+        "vermelho": true
       }
     },
     {
@@ -35,8 +33,13 @@
         }
       ],
       "visual": {
-        "tipo": "planeta",
-        "modo": "girando"
+        "tipo": "foto",
+        "imagem": "imagens/terra.jpg",
+        "legenda": "A Terra vista do espaço",
+        "satelites": [
+          "globo",
+          "vento"
+        ]
       }
     },
     {
@@ -91,8 +94,12 @@
         }
       ],
       "visual": {
-        "tipo": "icone",
-        "nome": "onibus"
+        "tipo": "foto",
+        "imagem": "imagens/onibus.jpg",
+        "satelites": [
+          "onibus",
+          "pessoa"
+        ]
       }
     },
     {
@@ -153,11 +160,9 @@
         }
       ],
       "visual": {
-        "tipo": "vento",
-        "itens": [
-          "furacao",
-          "vento"
-        ]
+        "tipo": "velocimetro",
+        "valor": 1500,
+        "max": 2000
       }
     },
     {
@@ -170,17 +175,14 @@
         }
       ],
       "visual": {
-        "tipo": "icones",
-        "itens": [
-          {
-            "nome": "furacao"
-          },
-          {
-            "nome": "furacao"
-          },
-          {
-            "nome": "furacao"
-          }
+        "tipo": "foto",
+        "imagem": "imagens/furacao.jpg",
+        "legenda": "Furacão visto da Estação Espacial",
+        "alertas": [
+          "vento",
+          "vento",
+          "vento",
+          "vento"
         ]
       }
     },
@@ -194,8 +196,12 @@
         }
       ],
       "visual": {
-        "tipo": "planeta",
-        "modo": "polos"
+        "tipo": "foto",
+        "imagem": "imagens/oceano.jpg",
+        "satelites": [
+          "onda",
+          "polos"
+        ]
       }
     },
     {
