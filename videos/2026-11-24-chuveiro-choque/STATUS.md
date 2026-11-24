@@ -1,3 +1,3 @@
 # Status
 
-Passo 4 (2026-11-24): storyboard + narração enviados ao dono. Aguardando aprovação/áudio.
+Storyboard aprovado (2026-11-24). Prévia sem narração (previa.mp4) enviada. Próximo: dono grava → audio/narracao.wav → transcrever → sincronizar → render.

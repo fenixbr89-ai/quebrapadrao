@@ -3,3 +3,4 @@ out/
 videos/*/final.mp4
 videos/*/audio/
 vosk-model*/
+videos/*/previa.mp4
