@@ -85,7 +85,7 @@ export const Visual: React.FC<{ v: V; slug: string; roteiro: Roteiro }> = ({ v, 
         <>
           {v.satelites ? <Satelites nomes={v.satelites} /> : null}
           <Entra x={CX} y={CY}>
-            <FotoMoldura src={`${slug}/${v.imagem}`} largura={760} altura={560} legenda={v.legenda} pb={v.pb ?? true} />
+            <FotoMoldura src={`${slug}/${v.imagem}`} largura={760} altura={560} legenda={v.legenda} pb={v.pb ?? false} />
           </Entra>
           {(v.alertas ?? []).map((n, i) => {
             const pos = [

@@ -5,7 +5,7 @@ export const FotoMoldura: React.FC<{ src: string; largura: number; altura: numbe
   src,
   largura,
   altura,
-  pb = true,
+  pb = false,
   legenda,
 }) => (
   <div

@@ -1,5 +1,12 @@
 # Guia de estilo — @quebra.padrao
 
+> **MUDANÇA 2026-11-25 (dono, por falta de engajamento): FOTOS COLORIDAS.**
+> - Todas as fotos aparecem **coloridas** (P&B só se a foto original não tiver cor, ex.: históricas).
+> - **Mais fotos e menos desenhos**: foto em moldura em boa parte das cenas.
+> - Todo **ser vivo ou objeto real** (boi, café, cavalo, chuveiro, Sol, relógio...) = **foto colorida dentro do ícone 3D** (`fotosIcones`). Desenho só para símbolo abstrato (alerta, X, setas, raio, fio terra) ou quando não houver foto livre.
+> - Fundo preto, legenda karaokê, vermelho #E53935 nos 2–3 momentos fortes, câmera/transições e logo continuam iguais.
+> - Onde este guia ainda disser "P&B", vale a regra acima.
+
 **Padrão fixo desde 2026-11-23: o estilo do vídeo do café** (`referencias/cafe-prancha.jpg`; código em `src/`, exemplo em `videos/2026-11-23-brasil-nao-tinha-cafe/roteiro.json`). Ele segue a estrutura e o ritmo do **vídeo do Titanic** (`referencias/titanic-prancha.jpg` e `referencias/titanic/quadro-NN.jpg`, um quadro a cada 2 s).
 Wizebot e Cervello (`referencias/movimento-*`) são só referência de **técnica de movimento** — nunca copiar marca, logo ou a paleta azul/verde.
 

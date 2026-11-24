@@ -25,7 +25,7 @@ Antes de tudo, leia `estilo/GUIA.md` e olhe `estilo/referencias/titanic-prancha.
 - Imagens: domínio público/licença livre (Wikimedia Commons, Library of Congress). Fonte e licença em `videos/<slug>/imagens/FONTES.md`. Sem imagem livre → ícone/gráfico.
 - **Não usar Higgsfield** nem geração de imagem paga.
 - Compare cada storyboard com `estilo/referencias/cafe-prancha.jpg` antes de enviar: se não parece com ele, ajuste.
-- Coisas reais (animais, comidas, objetos) = foto livre P&B dentro do ícone (`fotosIcones`); símbolos (alerta, X, setas, pessoa) desenhados. Vermelho só em 2–3 momentos. Fotos CC BY-SA/GFDL: crédito na legenda do post.
+- **Fotos coloridas** (desde 2026-11-25). Coisas reais (animais, comidas, objetos) = foto livre colorida dentro do ícone (`fotosIcones`), e muitas fotos em moldura; símbolos (alerta, X, setas, pessoa) desenhados. Vermelho só em 2–3 momentos. Fotos CC BY-SA/GFDL: crédito na legenda do post.
 - Storyboard: `npm run storyboard -- <slug> [--cenas id1,id2]`.
 
 ## Transcrição

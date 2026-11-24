@@ -4,7 +4,15 @@
   "pergunta": "qual parte te assustou mais?",
   "fotosIcones": {
     "globo": "imagens/icones/terra.jpg",
-    "lua": "imagens/icones/lua.jpg"
+    "lua": "imagens/icones/lua.jpg",
+    "sol": "imagens/sol.jpg",
+    "relogio": "imagens/relogio.jpg|50% 35%",
+    "onibus": "imagens/onibus2.jpg|60% 60%",
+    "vento": "imagens/vento.jpg|80% 50%",
+    "furacao": "imagens/furacao.jpg",
+    "som": "imagens/jato.jpg|45% 55%",
+    "onda": "imagens/oceano.jpg",
+    "pessoa": "imagens/pessoa.jpg|55% 60%"
   },
   "cenas": [
     {
@@ -52,11 +60,12 @@
         }
       ],
       "visual": {
-        "tipo": "icone",
-        "nome": "som",
+        "tipo": "foto",
+        "imagem": "imagens/jato.jpg",
+        "legenda": "Caça rompendo a barreira do som",
         "satelites": [
-          "globo",
-          "vento"
+          "som",
+          "globo"
         ]
       }
     },
@@ -112,8 +121,13 @@
         }
       ],
       "visual": {
-        "tipo": "planeta",
-        "modo": "parado"
+        "tipo": "icone",
+        "nome": "globo",
+        "rotulo": "E SE PARASSE?",
+        "satelites": [
+          "relogio",
+          "vento"
+        ]
       }
     },
     {
@@ -128,7 +142,8 @@
       "visual": {
         "tipo": "vento",
         "itens": [
-          "pessoa"
+          "pessoa",
+          "onibus"
         ]
       }
     },
@@ -144,9 +159,9 @@
       "visual": {
         "tipo": "vento",
         "itens": [
-          "pessoa",
           "onibus",
-          "pessoa"
+          "pessoa",
+          "onda"
         ]
       }
     },
@@ -160,9 +175,12 @@
         }
       ],
       "visual": {
-        "tipo": "velocimetro",
-        "valor": 1500,
-        "max": 2000
+        "tipo": "foto",
+        "imagem": "imagens/vento.jpg",
+        "satelites": [
+          "vento",
+          "furacao"
+        ]
       }
     },
     {
@@ -325,8 +343,12 @@
         }
       ],
       "visual": {
-        "tipo": "planeta",
-        "modo": "girando"
+        "tipo": "foto",
+        "imagem": "imagens/sofa.jpg",
+        "satelites": [
+          "globo",
+          "relogio"
+        ]
       }
     },
     {
