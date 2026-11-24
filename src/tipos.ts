@@ -7,7 +7,10 @@ export type Visual =
   | { tipo: "icone"; nome: string; variante?: Cor; rotulo?: string; satelites?: string[]; marca?: "x" }
   | { tipo: "icones"; itens: { nome: string; variante?: Cor; marca?: "x" }[] }
   | { tipo: "navio"; carga?: string[]; variante?: Cor }
-  | { tipo: "contador"; de: number; para: number; nome: string; rotulo?: string }
+  | { tipo: "contador"; de: number; para: number; nome: string; rotulo?: string; sufixo?: string }
+  | { tipo: "jato"; gotas: boolean; raio?: boolean }
+  | { tipo: "vento"; itens: string[] }
+  | { tipo: "planeta"; modo: "girando" | "polos" | "parado"; rotulo?: string }
   | { tipo: "rota"; de: string; para: string; nome: string }
   | { tipo: "troca"; esquerda: string; direita: string; vai: string[]; volta: string[] }
   | { tipo: "grade"; total: number; vermelhos: number; nome: string }

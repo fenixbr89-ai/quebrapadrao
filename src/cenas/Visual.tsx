@@ -171,6 +171,7 @@ export const Visual: React.FC<{ v: V; slug: string; roteiro: Roteiro }> = ({ v, 
     case "contador": {
       const p = interpolate(f, [2, Math.min(28, d * 0.6)], [0, 1], { ...cl, easing: Easing.out(Easing.cubic) });
       const valor = Math.round(v.de + (v.para - v.de) * p);
+      const texto = (v.para >= 10000 || v.sufixo !== undefined ? valor.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") : String(valor)) + (v.sufixo ?? "");
       const r = 260;
       const circ = 2 * Math.PI * r;
       conteudo = (
@@ -191,7 +192,7 @@ export const Visual: React.FC<{ v: V; slug: string; roteiro: Roteiro }> = ({ v, 
             />
             <circle cx={CX} cy={CY} r={r + 60} stroke="#1a1a1a" strokeWidth={2} fill="none" />
           </svg>
-          <Rotulo texto={String(valor)} y={CY + 10} tam={190} cor="#ffffff" />
+          <Rotulo texto={texto} y={CY + 10} tam={texto.length >= 5 ? 140 : 190} cor="#ffffff" />
           {v.rotulo ? <Rotulo texto={v.rotulo} y={CY + 130} tam={34} cor="#8a8a8a" /> : null}
           <Entra x={CX} y={CY - 190} atraso={2} de={0.4}>
             <Icone3D nome={v.nome} tamanho={130} />
@@ -301,6 +302,115 @@ export const Visual: React.FC<{ v: V; slug: string; roteiro: Roteiro }> = ({ v, 
           <Entra x={CX} y={CY}>
             <Icone3D nome={v.centro} tamanho={260} />
           </Entra>
+        </>
+      );
+      break;
+    }
+
+    case "jato": {
+      // chuveiro no alto; abaixo o jato: contínuo ou quebrado em gotas (com ar entre elas)
+      const topo = 360;
+      const base = 1150;
+      conteudo = (
+        <>
+          <svg width={1080} height={1300} style={{ position: "absolute", left: 0, top: 0 }}>
+            {v.gotas
+              ? Array.from({ length: 5 }).map((_, col) =>
+                  Array.from({ length: 9 }).map((__, k) => {
+                    const fase = ((f * 9 + k * 95 + col * 37) % 860) / 860;
+                    const y = topo + 150 + fase * (base - topo - 150);
+                    const x = CX - 120 + col * 60 + Math.sin(k + col) * 6;
+                    const r = 7 + (fase > 0.2 ? 6 : fase * 30);
+                    return <ellipse key={`${col}-${k}`} cx={x} cy={y} rx={r * 0.8} ry={r} fill="#e8e8e8" opacity={0.9} />;
+                  }),
+                )
+              : [0, 1, 2, 3, 4].map((col) => (
+                  <rect key={col} x={CX - 126 + col * 60} y={topo + 150} width={12} height={base - topo - 150} rx={6} fill="#e8e8e8" opacity={0.85} />
+                ))}
+          </svg>
+          <Entra x={CX} y={topo}>
+            <Icone3D nome="chuveiro" tamanho={260} />
+          </Entra>
+          {v.raio ? (
+            <Entra x={CX + 220} y={topo + 120} atraso={6} de={0.3}>
+              <Icone3D nome="raio" tamanho={120} />
+            </Entra>
+          ) : null}
+        </>
+      );
+      break;
+    }
+    case "vento": {
+      conteudo = (
+        <>
+          <svg width={1080} height={1300} style={{ position: "absolute", left: 0, top: 0 }}>
+            {Array.from({ length: 22 }).map((_, k) => {
+              const y = 260 + ((k * 137) % 860);
+              const comp = 160 + ((k * 53) % 240);
+              const x = ((k * 211 + f * 55) % 1600) - 300;
+              return <line key={k} x1={x} y1={y} x2={x + comp} y2={y} stroke="#ffffff" strokeOpacity={0.12 + ((k * 7) % 5) * 0.07} strokeWidth={4} strokeLinecap="round" />;
+            })}
+          </svg>
+          {v.itens.map((n, i) => {
+            const x = ((i * 380 + f * 38) % 1500) - 200;
+            const y = 420 + i * 230 + Math.sin((f + i * 20) / 6) * 18;
+            return (
+              <div key={i} style={{ position: "absolute", left: x, top: y, transform: `translate(-50%,-50%) rotate(${f * (6 + i * 3)}deg)`, filter: "url(#mbx2)" }}>
+                <Icone3D nome={n} tamanho={150} />
+              </div>
+            );
+          })}
+        </>
+      );
+      break;
+    }
+    case "planeta": {
+      const R = 300;
+      const gira = v.modo === "girando" ? f * 2.2 : 0;
+      conteudo = (
+        <>
+          <svg width={1080} height={1300} style={{ position: "absolute", left: 0, top: 0 }}>
+            <defs>
+              <clipPath id="disco">
+                <circle cx={CX} cy={CY} r={R} />
+              </clipPath>
+              <pattern id="hach" width="18" height="18" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                <line x1="0" y1="0" x2="0" y2="18" stroke="#9a9a9a" strokeWidth="5" />
+              </pattern>
+            </defs>
+            <circle cx={CX} cy={CY} r={R + 70} fill="none" stroke="#1f1f1f" strokeWidth={2} />
+            <circle cx={CX} cy={CY} r={R} fill="#111" stroke="#e6e6e6" strokeWidth={6} />
+            <g clipPath="url(#disco)">
+              {v.modo === "polos" ? (
+                <>
+                  <rect x={CX - R} y={CY - R} width={2 * R} height={R * 0.75} fill="#e6e6e6" />
+                  <rect x={CX - R} y={CY + R * 0.25} width={2 * R} height={R * 0.75} fill="#e6e6e6" />
+                  <rect x={CX - R} y={CY - R * 0.25} width={2 * R} height={R * 0.5} fill="url(#hach)" />
+                </>
+              ) : (
+                Array.from({ length: 7 }).map((_, k) => {
+                  const fase = (((k / 7) * 360 + gira) % 360) * (Math.PI / 180);
+                  const rx = Math.abs(Math.cos(fase)) * R;
+                  const lado = Math.sin(fase) > 0 ? 1 : 0.35;
+                  return <ellipse key={k} cx={CX} cy={CY} rx={rx} ry={R} fill="none" stroke="#e6e6e6" strokeOpacity={lado} strokeWidth={3} />;
+                })
+              )}
+              {[-0.5, 0, 0.5].map((t) => (
+                <ellipse key={t} cx={CX} cy={CY + t * R} rx={R * Math.sqrt(1 - t * t)} ry={14} fill="none" stroke="#e6e6e6" strokeOpacity={0.5} strokeWidth={3} />
+              ))}
+            </g>
+            {v.modo === "girando" ? (
+              <path d={`M${CX - R - 40} ${CY - 60} a ${R + 40} ${R + 40} 0 0 1 ${2 * R + 80} 0`} fill="none" stroke="#ffffff" strokeWidth={5} strokeDasharray="2 16" strokeLinecap="round" />
+            ) : null}
+          </svg>
+          {v.modo === "polos" ? (
+            <>
+              <Rotulo texto="OCEANO" x={CX} y={CY - R * 0.62} tam={34} cor="#111" />
+              <Rotulo texto="TERRA" x={CX} y={CY} tam={38} cor="#ffffff" />
+              <Rotulo texto="OCEANO" x={CX} y={CY + R * 0.62} tam={34} cor="#111" />
+            </>
+          ) : null}
+          {v.rotulo ? <Rotulo texto={v.rotulo} y={CY + R + 110} tam={38} /> : null}
         </>
       );
       break;

@@ -1,0 +1,342 @@
+{
+  "slug": "2026-11-24-chuveiro-choque",
+  "titulo": "Por que o chuveiro não dá choque?",
+  "pergunta": "você já levou choque no chuveiro?",
+  "cenas": [
+    {
+      "id": "gancho",
+      "texto": "O fio que esquenta o seu chuveiro fica dentro da água.",
+      "destaques": [
+        {
+          "palavra": "dentro da água.",
+          "cor": "branco"
+        }
+      ],
+      "visual": {
+        "tipo": "icone",
+        "nome": "chuveiro",
+        "satelites": [
+          "raio",
+          "gota",
+          "registro",
+          "raio"
+        ]
+      }
+    },
+    {
+      "id": "choque",
+      "texto": "E mesmo assim, você não toma choque.",
+      "destaques": [
+        {
+          "palavra": "choque.",
+          "cor": "vermelho"
+        }
+      ],
+      "visual": {
+        "tipo": "icone",
+        "nome": "raio",
+        "variante": "vermelho"
+      }
+    },
+    {
+      "id": "registro",
+      "texto": "Quando você abre o registro, a água passa por esse fio de metal.",
+      "destaques": [
+        {
+          "palavra": "fio de metal.",
+          "cor": "branco"
+        }
+      ],
+      "visual": {
+        "tipo": "rota",
+        "de": "REGISTRO",
+        "para": "RESISTÊNCIA",
+        "nome": "gota"
+      }
+    },
+    {
+      "id": "esquenta",
+      "texto": "A eletricidade esquenta o fio, e o fio esquenta a água.",
+      "destaques": [
+        {
+          "palavra": "esquenta",
+          "cor": "branco"
+        }
+      ],
+      "visual": {
+        "tipo": "icones",
+        "itens": [
+          {
+            "nome": "raio"
+          },
+          {
+            "nome": "gota"
+          }
+        ]
+      }
+    },
+    {
+      "id": "porque",
+      "texto": "Então por que a corrente não desce junto com o banho?",
+      "destaques": [
+        {
+          "palavra": "corrente",
+          "cor": "branco"
+        }
+      ],
+      "visual": {
+        "tipo": "jato",
+        "gotas": false,
+        "raio": true
+      }
+    },
+    {
+      "id": "um",
+      "texto": "Primeiro: a água da torneira conduz pouca eletricidade.",
+      "destaques": [
+        {
+          "palavra": "Primeiro:",
+          "cor": "branco"
+        },
+        {
+          "palavra": "pouca",
+          "cor": "branco"
+        }
+      ],
+      "visual": {
+        "tipo": "icone",
+        "nome": "gota",
+        "rotulo": "ÁGUA DA TORNEIRA"
+      }
+    },
+    {
+      "id": "fino",
+      "texto": "E o caminho de água até você é longo e fino.",
+      "destaques": [
+        {
+          "palavra": "longo e fino.",
+          "cor": "branco"
+        }
+      ],
+      "visual": {
+        "tipo": "rota",
+        "de": "FIO",
+        "para": "VOCÊ",
+        "nome": "raio"
+      }
+    },
+    {
+      "id": "fraca",
+      "texto": "A corrente chega tão fraca que você nem sente.",
+      "destaques": [
+        {
+          "palavra": "nem sente.",
+          "cor": "branco"
+        }
+      ],
+      "visual": {
+        "tipo": "icone",
+        "nome": "pessoa",
+        "rotulo": "NEM SENTE",
+        "satelites": [
+          "raio",
+          "gota"
+        ]
+      }
+    },
+    {
+      "id": "dois",
+      "texto": "Segundo: o jato não é um fio de água.",
+      "destaques": [
+        {
+          "palavra": "Segundo:",
+          "cor": "branco"
+        }
+      ],
+      "visual": {
+        "tipo": "jato",
+        "gotas": false
+      }
+    },
+    {
+      "id": "gotas",
+      "texto": "Logo na saída, ele se quebra em gotas.",
+      "destaques": [
+        {
+          "palavra": "gotas.",
+          "cor": "branco"
+        }
+      ],
+      "visual": {
+        "tipo": "jato",
+        "gotas": true
+      }
+    },
+    {
+      "id": "ar",
+      "texto": "E o ar entre uma gota e outra corta o caminho da corrente.",
+      "destaques": [
+        {
+          "palavra": "ar",
+          "cor": "branco"
+        }
+      ],
+      "visual": {
+        "tipo": "jato",
+        "gotas": true,
+        "raio": true
+      }
+    },
+    {
+      "id": "tres",
+      "texto": "Terceiro: o fio terra.",
+      "destaques": [
+        {
+          "palavra": "fio terra.",
+          "cor": "branco"
+        }
+      ],
+      "visual": {
+        "tipo": "icone",
+        "nome": "terra",
+        "satelites": [
+          "raio",
+          "chuveiro"
+        ]
+      }
+    },
+    {
+      "id": "chao",
+      "texto": "Se escapar eletricidade, ela vai por ele direto pro chão.",
+      "destaques": [
+        {
+          "palavra": "chão.",
+          "cor": "branco"
+        }
+      ],
+      "visual": {
+        "tipo": "rota",
+        "de": "CHUVEIRO",
+        "para": "CHÃO",
+        "nome": "raio"
+      }
+    },
+    {
+      "id": "dr",
+      "texto": "E o DR desliga tudo num piscar de olhos.",
+      "destaques": [
+        {
+          "palavra": "DR",
+          "cor": "branco"
+        }
+      ],
+      "visual": {
+        "tipo": "icone",
+        "nome": "disjuntor",
+        "rotulo": "DISJUNTOR DR"
+      }
+    },
+    {
+      "id": "levou",
+      "texto": "Agora, se você já levou choque no registro,",
+      "destaques": [
+        {
+          "palavra": "registro,",
+          "cor": "branco"
+        }
+      ],
+      "visual": {
+        "tipo": "icone",
+        "nome": "registro",
+        "satelites": [
+          "raio",
+          "gota"
+        ]
+      }
+    },
+    {
+      "id": "semterra",
+      "texto": "o seu chuveiro está sem fio terra.",
+      "destaques": [
+        {
+          "palavra": "sem fio terra.",
+          "cor": "vermelho"
+        }
+      ],
+      "visual": {
+        "tipo": "icone",
+        "nome": "terra",
+        "variante": "vermelho",
+        "marca": "x"
+      }
+    },
+    {
+      "id": "eletricista",
+      "texto": "Chame um eletricista.",
+      "destaques": [
+        {
+          "palavra": "eletricista.",
+          "cor": "branco"
+        }
+      ],
+      "visual": {
+        "tipo": "icone",
+        "nome": "ferramenta"
+      }
+    },
+    {
+      "id": "recap",
+      "texto": "Pouca corrente, gotas, fio terra e DR. É isso que te protege.",
+      "destaques": [
+        {
+          "palavra": "te protege.",
+          "cor": "branco"
+        }
+      ],
+      "visual": {
+        "tipo": "recap",
+        "centro": "chuveiro",
+        "itens": [
+          {
+            "nome": "gota"
+          },
+          {
+            "nome": "raio"
+          },
+          {
+            "nome": "terra"
+          },
+          {
+            "nome": "disjuntor"
+          }
+        ]
+      }
+    },
+    {
+      "id": "pergunta",
+      "texto": "Você já levou choque no chuveiro? Comenta.",
+      "destaques": [
+        {
+          "palavra": "chuveiro?",
+          "cor": "branco"
+        }
+      ],
+      "visual": {
+        "tipo": "balao"
+      }
+    },
+    {
+      "id": "final",
+      "texto": "E segue o @quebra.padrao.",
+      "destaques": [
+        {
+          "palavra": "@quebra.padrao.",
+          "cor": "branco"
+        }
+      ],
+      "visual": {
+        "tipo": "final"
+      }
+    }
+  ]
+}

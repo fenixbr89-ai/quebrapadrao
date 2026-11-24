@@ -1,0 +1,353 @@
+{
+  "slug": "2026-11-24-terra-parasse",
+  "titulo": "E se a Terra parasse de girar?",
+  "pergunta": "qual parte te assustou mais?",
+  "fotosIcones": {
+    "globo": "imagens/icones/terra.jpg",
+    "lua": "imagens/icones/lua.jpg"
+  },
+  "cenas": [
+    {
+      "id": "gancho",
+      "texto": "Agora mesmo, você está a mais de 1.500 km/h.",
+      "destaques": [
+        {
+          "palavra": "1.500 km/h.",
+          "cor": "vermelho"
+        }
+      ],
+      "visual": {
+        "tipo": "contador",
+        "de": 0,
+        "para": 1500,
+        "nome": "globo",
+        "rotulo": "KM/H",
+        "sufixo": ""
+      }
+    },
+    {
+      "id": "gira",
+      "texto": "É a Terra girando, aqui no Brasil.",
+      "destaques": [
+        {
+          "palavra": "Terra girando,",
+          "cor": "branco"
+        }
+      ],
+      "visual": {
+        "tipo": "planeta",
+        "modo": "girando"
+      }
+    },
+    {
+      "id": "som",
+      "texto": "Mais rápido que o som.",
+      "destaques": [
+        {
+          "palavra": "som.",
+          "cor": "branco"
+        }
+      ],
+      "visual": {
+        "tipo": "icone",
+        "nome": "som",
+        "satelites": [
+          "globo",
+          "vento"
+        ]
+      }
+    },
+    {
+      "id": "junto",
+      "texto": "Você não sente porque tudo gira junto: você, o chão e o ar.",
+      "destaques": [
+        {
+          "palavra": "junto:",
+          "cor": "branco"
+        }
+      ],
+      "visual": {
+        "tipo": "icones",
+        "itens": [
+          {
+            "nome": "pessoa"
+          },
+          {
+            "nome": "globo"
+          },
+          {
+            "nome": "vento"
+          }
+        ]
+      }
+    },
+    {
+      "id": "onibus",
+      "texto": "Igual cochilar no ônibus numa reta.",
+      "destaques": [
+        {
+          "palavra": "ônibus",
+          "cor": "branco"
+        }
+      ],
+      "visual": {
+        "tipo": "icone",
+        "nome": "onibus"
+      }
+    },
+    {
+      "id": "parasse",
+      "texto": "Mas e se a Terra parasse de uma vez?",
+      "destaques": [
+        {
+          "palavra": "parasse",
+          "cor": "branco"
+        }
+      ],
+      "visual": {
+        "tipo": "planeta",
+        "modo": "parado"
+      }
+    },
+    {
+      "id": "chao",
+      "texto": "O chão para. Você, não.",
+      "destaques": [
+        {
+          "palavra": "não.",
+          "cor": "branco"
+        }
+      ],
+      "visual": {
+        "tipo": "vento",
+        "itens": [
+          "pessoa"
+        ]
+      }
+    },
+    {
+      "id": "voando",
+      "texto": "Tudo que não estivesse preso sairia voando.",
+      "destaques": [
+        {
+          "palavra": "voando.",
+          "cor": "branco"
+        }
+      ],
+      "visual": {
+        "tipo": "vento",
+        "itens": [
+          "pessoa",
+          "onibus",
+          "pessoa"
+        ]
+      }
+    },
+    {
+      "id": "ar",
+      "texto": "E o ar viraria um vento de mais de 1.500 km/h.",
+      "destaques": [
+        {
+          "palavra": "vento",
+          "cor": "branco"
+        }
+      ],
+      "visual": {
+        "tipo": "vento",
+        "itens": [
+          "furacao",
+          "vento"
+        ]
+      }
+    },
+    {
+      "id": "recorde",
+      "texto": "Umas quatro vezes a rajada mais forte já medida.",
+      "destaques": [
+        {
+          "palavra": "quatro vezes",
+          "cor": "vermelho"
+        }
+      ],
+      "visual": {
+        "tipo": "icones",
+        "itens": [
+          {
+            "nome": "furacao"
+          },
+          {
+            "nome": "furacao"
+          },
+          {
+            "nome": "furacao"
+          }
+        ]
+      }
+    },
+    {
+      "id": "oceanos",
+      "texto": "Com o tempo, os oceanos escorreriam para os polos.",
+      "destaques": [
+        {
+          "palavra": "polos.",
+          "cor": "branco"
+        }
+      ],
+      "visual": {
+        "tipo": "planeta",
+        "modo": "polos"
+      }
+    },
+    {
+      "id": "faixa",
+      "texto": "E no meio do planeta, sobraria uma faixa enorme de terra seca.",
+      "destaques": [
+        {
+          "palavra": "terra seca.",
+          "cor": "branco"
+        }
+      ],
+      "visual": {
+        "tipo": "planeta",
+        "modo": "polos",
+        "rotulo": "UM SUPERCONTINENTE"
+      }
+    },
+    {
+      "id": "dia",
+      "texto": "E o dia? Duraria um ano inteiro.",
+      "destaques": [
+        {
+          "palavra": "um ano",
+          "cor": "branco"
+        }
+      ],
+      "visual": {
+        "tipo": "contador",
+        "de": 1,
+        "para": 365,
+        "nome": "relogio",
+        "rotulo": "DIAS EM UM DIA"
+      }
+    },
+    {
+      "id": "seis",
+      "texto": "Seis meses de sol. Seis meses de noite.",
+      "destaques": [
+        {
+          "palavra": "sol.",
+          "cor": "branco"
+        },
+        {
+          "palavra": "noite.",
+          "cor": "branco"
+        }
+      ],
+      "visual": {
+        "tipo": "icones",
+        "itens": [
+          {
+            "nome": "sol"
+          },
+          {
+            "nome": "lua"
+          }
+        ]
+      }
+    },
+    {
+      "id": "calma",
+      "texto": "Calma: a Terra não vai parar.",
+      "destaques": [
+        {
+          "palavra": "não vai parar.",
+          "cor": "branco"
+        }
+      ],
+      "visual": {
+        "tipo": "foto",
+        "imagem": "imagens/terra.jpg",
+        "legenda": "Terra vista da Apollo 17, 1972"
+      }
+    },
+    {
+      "id": "lua",
+      "texto": "Ela só está freando bem devagar, por causa da Lua.",
+      "destaques": [
+        {
+          "palavra": "Lua.",
+          "cor": "branco"
+        }
+      ],
+      "visual": {
+        "tipo": "icones",
+        "itens": [
+          {
+            "nome": "globo"
+          },
+          {
+            "nome": "lua"
+          }
+        ]
+      }
+    },
+    {
+      "id": "milesimos",
+      "texto": "O dia ganha uns 2 milésimos de segundo a cada século.",
+      "destaques": [
+        {
+          "palavra": "2 milésimos",
+          "cor": "branco"
+        }
+      ],
+      "visual": {
+        "tipo": "contador",
+        "de": 0,
+        "para": 2,
+        "nome": "relogio",
+        "rotulo": "A CADA SÉCULO",
+        "sufixo": " ms"
+      }
+    },
+    {
+      "id": "sofa",
+      "texto": "Então, parado aí no sofá, você está voando.",
+      "destaques": [
+        {
+          "palavra": "voando.",
+          "cor": "branco"
+        }
+      ],
+      "visual": {
+        "tipo": "planeta",
+        "modo": "girando"
+      }
+    },
+    {
+      "id": "pergunta",
+      "texto": "Qual parte te assustou mais? Comenta.",
+      "destaques": [
+        {
+          "palavra": "assustou",
+          "cor": "branco"
+        }
+      ],
+      "visual": {
+        "tipo": "balao"
+      }
+    },
+    {
+      "id": "final",
+      "texto": "E segue o @quebra.padrao.",
+      "destaques": [
+        {
+          "palavra": "@quebra.padrao.",
+          "cor": "branco"
+        }
+      ],
+      "visual": {
+        "tipo": "final"
+      }
+    }
+  ]
+}
