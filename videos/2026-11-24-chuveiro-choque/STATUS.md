@@ -1,3 +1,3 @@
 # Status
 
-Storyboard aprovado (2026-11-24). Prévia sem narração (previa.mp4) enviada. Próximo: dono grava → audio/narracao.wav → transcrever → sincronizar → render.
+Passo 8 concluído (2026-11-25): final.mp4 + post.md entregues. Divergência 10,9% (quase toda erro do reconhecimento de voz).

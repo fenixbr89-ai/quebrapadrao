@@ -1,0 +1,880 @@
+{
+ "palavras": [
+  {
+   "palavra": "O",
+   "inicio": 0.24,
+   "fim": 0.36
+  },
+  {
+   "palavra": "fio",
+   "inicio": 0.36,
+   "fim": 0.66
+  },
+  {
+   "palavra": "que",
+   "inicio": 0.66,
+   "fim": 0.9
+  },
+  {
+   "palavra": "esquenta",
+   "inicio": 0.904,
+   "fim": 1.289
+  },
+  {
+   "palavra": "o",
+   "inicio": 1.291,
+   "fim": 1.35
+  },
+  {
+   "palavra": "seu",
+   "inicio": 1.35,
+   "fim": 1.499
+  },
+  {
+   "palavra": "chuveiro",
+   "inicio": 1.499,
+   "fim": 2.01
+  },
+  {
+   "palavra": "fica",
+   "inicio": 2.01,
+   "fim": 2.34
+  },
+  {
+   "palavra": "dentro",
+   "inicio": 2.351,
+   "fim": 2.76
+  },
+  {
+   "palavra": "da",
+   "inicio": 2.76,
+   "fim": 2.91
+  },
+  {
+   "palavra": "água.",
+   "inicio": 2.91,
+   "fim": 3.27
+  },
+  {
+   "palavra": "E",
+   "inicio": 3.69,
+   "fim": 3.78
+  },
+  {
+   "palavra": "mesmo",
+   "inicio": 3.78,
+   "fim": 4.14
+  },
+  {
+   "palavra": "assim,",
+   "inicio": 4.14,
+   "fim": 4.44
+  },
+  {
+   "palavra": "você",
+   "inicio": 4.65,
+   "fim": 4.92
+  },
+  {
+   "palavra": "não",
+   "inicio": 4.92,
+   "fim": 5.16
+  },
+  {
+   "palavra": "toma",
+   "inicio": 5.22,
+   "fim": 5.545
+  },
+  {
+   "palavra": "choque.",
+   "inicio": 5.55,
+   "fim": 5.94
+  },
+  {
+   "palavra": "Quando",
+   "inicio": 6.87,
+   "fim": 7.08
+  },
+  {
+   "palavra": "você",
+   "inicio": 7.08,
+   "fim": 7.32
+  },
+  {
+   "palavra": "abre",
+   "inicio": 7.32,
+   "fim": 7.59
+  },
+  {
+   "palavra": "o",
+   "inicio": 7.59,
+   "fim": 7.62
+  },
+  {
+   "palavra": "registro,",
+   "inicio": 7.623,
+   "fim": 8.16
+  },
+  {
+   "palavra": "a",
+   "inicio": 8.16,
+   "fim": 8.267
+  },
+  {
+   "palavra": "água",
+   "inicio": 8.374,
+   "fim": 8.7
+  },
+  {
+   "palavra": "passa",
+   "inicio": 8.7,
+   "fim": 9.12
+  },
+  {
+   "palavra": "por",
+   "inicio": 9.12,
+   "fim": 9.27
+  },
+  {
+   "palavra": "esse",
+   "inicio": 9.27,
+   "fim": 9.45
+  },
+  {
+   "palavra": "fio",
+   "inicio": 9.45,
+   "fim": 9.63
+  },
+  {
+   "palavra": "de",
+   "inicio": 9.631,
+   "fim": 9.72
+  },
+  {
+   "palavra": "metal.",
+   "inicio": 9.72,
+   "fim": 10.08
+  },
+  {
+   "palavra": "A",
+   "inicio": 10.5,
+   "fim": 10.62
+  },
+  {
+   "palavra": "eletricidade",
+   "inicio": 10.62,
+   "fim": 11.374
+  },
+  {
+   "palavra": "esquenta",
+   "inicio": 11.374,
+   "fim": 11.759
+  },
+  {
+   "palavra": "o",
+   "inicio": 11.765,
+   "fim": 11.818
+  },
+  {
+   "palavra": "fio,",
+   "inicio": 11.818,
+   "fim": 12.12
+  },
+  {
+   "palavra": "e",
+   "inicio": 12.42,
+   "fim": 12.483
+  },
+  {
+   "palavra": "o",
+   "inicio": 12.483,
+   "fim": 12.569
+  },
+  {
+   "palavra": "fio",
+   "inicio": 12.569,
+   "fim": 12.813
+  },
+  {
+   "palavra": "esquenta",
+   "inicio": 13.11,
+   "fim": 13.258
+  },
+  {
+   "palavra": "a",
+   "inicio": 13.258,
+   "fim": 13.258
+  },
+  {
+   "palavra": "água.",
+   "inicio": 13.258,
+   "fim": 13.56
+  },
+  {
+   "palavra": "Então",
+   "inicio": 14.28,
+   "fim": 14.55
+  },
+  {
+   "palavra": "por",
+   "inicio": 14.55,
+   "fim": 14.55
+  },
+  {
+   "palavra": "que",
+   "inicio": 14.55,
+   "fim": 14.91
+  },
+  {
+   "palavra": "a",
+   "inicio": 14.91,
+   "fim": 14.97
+  },
+  {
+   "palavra": "corrente",
+   "inicio": 14.97,
+   "fim": 15.39
+  },
+  {
+   "palavra": "não",
+   "inicio": 15.39,
+   "fim": 15.57
+  },
+  {
+   "palavra": "desce",
+   "inicio": 15.57,
+   "fim": 15.96
+  },
+  {
+   "palavra": "junto",
+   "inicio": 15.962,
+   "fim": 16.29
+  },
+  {
+   "palavra": "com",
+   "inicio": 16.29,
+   "fim": 16.456
+  },
+  {
+   "palavra": "o",
+   "inicio": 16.456,
+   "fim": 16.4665
+  },
+  {
+   "palavra": "banho?",
+   "inicio": 16.477,
+   "fim": 16.829
+  },
+  {
+   "palavra": "Primeiro:",
+   "inicio": 17.55,
+   "fim": 17.97
+  },
+  {
+   "palavra": "a",
+   "inicio": 18.3,
+   "fim": 18.468
+  },
+  {
+   "palavra": "água",
+   "inicio": 18.468,
+   "fim": 18.69
+  },
+  {
+   "palavra": "da",
+   "inicio": 18.69,
+   "fim": 18.81
+  },
+  {
+   "palavra": "torneira",
+   "inicio": 18.81,
+   "fim": 19.32
+  },
+  {
+   "palavra": "conduz",
+   "inicio": 19.498,
+   "fim": 19.77
+  },
+  {
+   "palavra": "pouca",
+   "inicio": 19.77,
+   "fim": 20.16
+  },
+  {
+   "palavra": "eletricidade.",
+   "inicio": 20.19,
+   "fim": 20.91
+  },
+  {
+   "palavra": "E",
+   "inicio": 21.324,
+   "fim": 21.384
+  },
+  {
+   "palavra": "o",
+   "inicio": 21.39,
+   "fim": 21.48
+  },
+  {
+   "palavra": "caminho",
+   "inicio": 21.48,
+   "fim": 21.78
+  },
+  {
+   "palavra": "de",
+   "inicio": 21.78,
+   "fim": 21.9
+  },
+  {
+   "palavra": "água",
+   "inicio": 21.901,
+   "fim": 22.17
+  },
+  {
+   "palavra": "até",
+   "inicio": 22.17,
+   "fim": 22.32
+  },
+  {
+   "palavra": "você",
+   "inicio": 22.32,
+   "fim": 22.698
+  },
+  {
+   "palavra": "é",
+   "inicio": 22.71,
+   "fim": 22.77
+  },
+  {
+   "palavra": "longo",
+   "inicio": 22.779,
+   "fim": 23.19
+  },
+  {
+   "palavra": "e",
+   "inicio": 23.19,
+   "fim": 23.25
+  },
+  {
+   "palavra": "fino.",
+   "inicio": 23.25,
+   "fim": 23.61
+  },
+  {
+   "palavra": "A",
+   "inicio": 24.27,
+   "fim": 24.36
+  },
+  {
+   "palavra": "corrente",
+   "inicio": 24.36,
+   "fim": 24.777
+  },
+  {
+   "palavra": "chega",
+   "inicio": 24.78,
+   "fim": 25.078
+  },
+  {
+   "palavra": "tão",
+   "inicio": 25.081,
+   "fim": 25.32
+  },
+  {
+   "palavra": "fraca",
+   "inicio": 25.35,
+   "fim": 25.77
+  },
+  {
+   "palavra": "que",
+   "inicio": 25.77,
+   "fim": 25.89
+  },
+  {
+   "palavra": "você",
+   "inicio": 25.89,
+   "fim": 26.156
+  },
+  {
+   "palavra": "nem",
+   "inicio": 26.156,
+   "fim": 26.2635
+  },
+  {
+   "palavra": "sente.",
+   "inicio": 26.371,
+   "fim": 26.7
+  },
+  {
+   "palavra": "Segundo:",
+   "inicio": 27.541,
+   "fim": 27.99
+  },
+  {
+   "palavra": "o",
+   "inicio": 28.38,
+   "fim": 28.5
+  },
+  {
+   "palavra": "jato",
+   "inicio": 28.5,
+   "fim": 28.92
+  },
+  {
+   "palavra": "não",
+   "inicio": 28.92,
+   "fim": 29.19
+  },
+  {
+   "palavra": "é",
+   "inicio": 29.19,
+   "fim": 29.28
+  },
+  {
+   "palavra": "um",
+   "inicio": 29.28,
+   "fim": 29.4
+  },
+  {
+   "palavra": "fio",
+   "inicio": 29.4,
+   "fim": 29.67
+  },
+  {
+   "palavra": "de",
+   "inicio": 29.67,
+   "fim": 29.79
+  },
+  {
+   "palavra": "água.",
+   "inicio": 29.79,
+   "fim": 30.12
+  },
+  {
+   "palavra": "Logo",
+   "inicio": 30.54,
+   "fim": 30.81
+  },
+  {
+   "palavra": "na",
+   "inicio": 30.81,
+   "fim": 30.93
+  },
+  {
+   "palavra": "saída,",
+   "inicio": 30.93,
+   "fim": 31.38
+  },
+  {
+   "palavra": "ele",
+   "inicio": 31.47,
+   "fim": 31.65
+  },
+  {
+   "palavra": "se",
+   "inicio": 31.661,
+   "fim": 31.8
+  },
+  {
+   "palavra": "quebra",
+   "inicio": 31.8,
+   "fim": 31.965000000000003
+  },
+  {
+   "palavra": "em",
+   "inicio": 32.13,
+   "fim": 32.19
+  },
+  {
+   "palavra": "gotas.",
+   "inicio": 32.19,
+   "fim": 32.67
+  },
+  {
+   "palavra": "E",
+   "inicio": 33.18,
+   "fim": 33.3
+  },
+  {
+   "palavra": "o",
+   "inicio": 33.3,
+   "fim": 33.39
+  },
+  {
+   "palavra": "ar",
+   "inicio": 33.39,
+   "fim": 33.6
+  },
+  {
+   "palavra": "entre",
+   "inicio": 33.6,
+   "fim": 33.87
+  },
+  {
+   "palavra": "uma",
+   "inicio": 33.87,
+   "fim": 34.018
+  },
+  {
+   "palavra": "gota",
+   "inicio": 34.02,
+   "fim": 34.349
+  },
+  {
+   "palavra": "e",
+   "inicio": 34.349,
+   "fim": 34.41
+  },
+  {
+   "palavra": "outra",
+   "inicio": 34.41,
+   "fim": 34.77
+  },
+  {
+   "palavra": "corta",
+   "inicio": 34.89,
+   "fim": 35.28
+  },
+  {
+   "palavra": "o",
+   "inicio": 35.28,
+   "fim": 35.34
+  },
+  {
+   "palavra": "caminho",
+   "inicio": 35.34,
+   "fim": 35.67
+  },
+  {
+   "palavra": "da",
+   "inicio": 35.67,
+   "fim": 35.79
+  },
+  {
+   "palavra": "corrente.",
+   "inicio": 35.79,
+   "fim": 36.24
+  },
+  {
+   "palavra": "Terceiro:",
+   "inicio": 36.84,
+   "fim": 37.38
+  },
+  {
+   "palavra": "o",
+   "inicio": 37.65,
+   "fim": 37.77
+  },
+  {
+   "palavra": "fio",
+   "inicio": 37.77,
+   "fim": 38.13
+  },
+  {
+   "palavra": "terra.",
+   "inicio": 38.13,
+   "fim": 38.55
+  },
+  {
+   "palavra": "Se",
+   "inicio": 39.06,
+   "fim": 39.27
+  },
+  {
+   "palavra": "escapar",
+   "inicio": 39.27,
+   "fim": 39.66
+  },
+  {
+   "palavra": "eletricidade,",
+   "inicio": 39.666,
+   "fim": 40.32
+  },
+  {
+   "palavra": "ela",
+   "inicio": 40.65,
+   "fim": 40.86
+  },
+  {
+   "palavra": "vai",
+   "inicio": 40.86,
+   "fim": 41.04
+  },
+  {
+   "palavra": "por",
+   "inicio": 41.04,
+   "fim": 41.254
+  },
+  {
+   "palavra": "ele",
+   "inicio": 41.254,
+   "fim": 41.481
+  },
+  {
+   "palavra": "direto",
+   "inicio": 41.484,
+   "fim": 42
+  },
+  {
+   "palavra": "pro",
+   "inicio": 42.12,
+   "fim": 42.15
+  },
+  {
+   "palavra": "chão.",
+   "inicio": 42.15,
+   "fim": 42.39
+  },
+  {
+   "palavra": "E",
+   "inicio": 42.842,
+   "fim": 42.935
+  },
+  {
+   "palavra": "o",
+   "inicio": 42.935,
+   "fim": 43.02
+  },
+  {
+   "palavra": "DR",
+   "inicio": 43.02,
+   "fim": 43.260000000000005
+  },
+  {
+   "palavra": "desliga",
+   "inicio": 43.5,
+   "fim": 44.01
+  },
+  {
+   "palavra": "tudo",
+   "inicio": 44.015,
+   "fim": 44.34
+  },
+  {
+   "palavra": "num",
+   "inicio": 44.34,
+   "fim": 44.46
+  },
+  {
+   "palavra": "piscar",
+   "inicio": 44.46,
+   "fim": 44.82
+  },
+  {
+   "palavra": "de",
+   "inicio": 44.82,
+   "fim": 44.91
+  },
+  {
+   "palavra": "olhos.",
+   "inicio": 44.91,
+   "fim": 45.24
+  },
+  {
+   "palavra": "Agora,",
+   "inicio": 46.08,
+   "fim": 46.47
+  },
+  {
+   "palavra": "se",
+   "inicio": 46.47,
+   "fim": 46.65
+  },
+  {
+   "palavra": "você",
+   "inicio": 46.65,
+   "fim": 46.92
+  },
+  {
+   "palavra": "já",
+   "inicio": 46.921,
+   "fim": 47.13
+  },
+  {
+   "palavra": "levou",
+   "inicio": 47.13,
+   "fim": 47.449
+  },
+  {
+   "palavra": "choque",
+   "inicio": 47.46,
+   "fim": 47.85
+  },
+  {
+   "palavra": "no",
+   "inicio": 47.85,
+   "fim": 47.97
+  },
+  {
+   "palavra": "registro,",
+   "inicio": 47.97,
+   "fim": 48.54
+  },
+  {
+   "palavra": "o",
+   "inicio": 48.72,
+   "fim": 48.812
+  },
+  {
+   "palavra": "seu",
+   "inicio": 48.812,
+   "fim": 49.08
+  },
+  {
+   "palavra": "chuveiro",
+   "inicio": 49.08,
+   "fim": 49.53
+  },
+  {
+   "palavra": "está",
+   "inicio": 49.531,
+   "fim": 49.68
+  },
+  {
+   "palavra": "sem",
+   "inicio": 49.68,
+   "fim": 50.01
+  },
+  {
+   "palavra": "fio",
+   "inicio": 50.01,
+   "fim": 50.25
+  },
+  {
+   "palavra": "terra.",
+   "inicio": 50.25,
+   "fim": 50.61
+  },
+  {
+   "palavra": "Chame",
+   "inicio": 50.91,
+   "fim": 51.235
+  },
+  {
+   "palavra": "um",
+   "inicio": 51.293,
+   "fim": 51.36
+  },
+  {
+   "palavra": "eletricista.",
+   "inicio": 51.36,
+   "fim": 52.02
+  },
+  {
+   "palavra": "Pouca",
+   "inicio": 52.62,
+   "fim": 52.95
+  },
+  {
+   "palavra": "corrente,",
+   "inicio": 52.95,
+   "fim": 53.43
+  },
+  {
+   "palavra": "gotas,",
+   "inicio": 53.67,
+   "fim": 54.24
+  },
+  {
+   "palavra": "fio",
+   "inicio": 54.42,
+   "fim": 54.69
+  },
+  {
+   "palavra": "terra",
+   "inicio": 54.69,
+   "fim": 55.11
+  },
+  {
+   "palavra": "e",
+   "inicio": 55.31,
+   "fim": 55.429
+  },
+  {
+   "palavra": "DR.",
+   "inicio": 55.429,
+   "fim": 55.8245
+  },
+  {
+   "palavra": "É",
+   "inicio": 56.22,
+   "fim": 56.34
+  },
+  {
+   "palavra": "isso",
+   "inicio": 56.34,
+   "fim": 56.67
+  },
+  {
+   "palavra": "que",
+   "inicio": 56.67,
+   "fim": 56.779
+  },
+  {
+   "palavra": "te",
+   "inicio": 56.779,
+   "fim": 56.878
+  },
+  {
+   "palavra": "protege.",
+   "inicio": 56.878,
+   "fim": 57.3
+  },
+  {
+   "palavra": "Você",
+   "inicio": 57.3,
+   "fim": 57.81
+  },
+  {
+   "palavra": "já",
+   "inicio": 58.32,
+   "fim": 58.41
+  },
+  {
+   "palavra": "levou",
+   "inicio": 58.41,
+   "fim": 58.59
+  },
+  {
+   "palavra": "choque",
+   "inicio": 58.591,
+   "fim": 58.89
+  },
+  {
+   "palavra": "no",
+   "inicio": 58.89,
+   "fim": 58.979
+  },
+  {
+   "palavra": "chuveiro?",
+   "inicio": 58.979,
+   "fim": 59.34
+  },
+  {
+   "palavra": "Comenta.",
+   "inicio": 59.7,
+   "fim": 60.12
+  },
+  {
+   "palavra": "E",
+   "inicio": 60.42,
+   "fim": 60.54
+  },
+  {
+   "palavra": "segue",
+   "inicio": 60.54,
+   "fim": 60.922
+  },
+  {
+   "palavra": "o",
+   "inicio": 60.922,
+   "fim": 60.9405
+  },
+  {
+   "palavra": "@quebra.padrao.",
+   "inicio": 60.959,
+   "fim": 61.59
+  }
+ ],
+ "duracaoAudio": 61.8
+}
