@@ -39,7 +39,11 @@ export function porExtenso(n: number): string[] {
 }
 
 /** Como uma palavra do texto soa (lista de palavras faladas normalizadas). */
+const SIGLAS: Record<string, string[]> = { "km/h": ["quilometros", "por", "hora"], dr: ["de", "erre"], ms: ["milissegundos"] };
+
 function falado(token: string): string[] {
+  const limpo = token.toLowerCase().replace(/[,.;:!?]+$/, "");
+  if (SIGLAS[limpo]) return SIGLAS[limpo];
   return token
     .replace(/[@]/g, " ")
     .split(/[-.\s]+/)

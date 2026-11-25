@@ -1,3 +1,3 @@
 # Status
 
-Refeito no estilo COLORIDO (2026-11-25): storyboard + prévia enviados. Aguardando áudio da narração.
+Passo 8 concluído (2026-11-25): final.mp4 + post.md entregues. Divergência 16% (maioria erro do reconhecimento; pulou "o ar", "Com o tempo", "aí").
